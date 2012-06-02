@@ -1,0 +1,1111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db flnm="db_nfc" nm="preventista" ver="1.3.4">
+  <VerLbl/>
+  <VerNotes/>
+  <DefTblOpts/>
+  <DocFolder>/home/johnny/Documentos/proyectos_db</DocFolder>
+  <Sch Cm="" nm="public">
+    <Tbl UsSo="1" nm="categorias">
+      <TblOpts/>
+      <Pk ClNs="_id" nm="pkcategorias"/>
+      <Cl au="1" df="" nm="_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="descripcion" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="now()" nm="created_at" nu="1">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="1">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="grupos_tabgral">
+      <TblOpts/>
+      <Pk ClNs="_id" nm="pkgrupos_tabgral"/>
+      <Cl au="1" df="" nm="_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="descripcion" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="now()" nm="created_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="0">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="menues">
+      <TblOpts/>
+      <Pk ClNs="_id" nm="pkmenues"/>
+      <Cl au="1" df="" nm="_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="mesas">
+      <TblOpts/>
+      <Pk ClNs="_id" nm="pkmesas"/>
+      <Cl au="1" df="" nm="_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="estado" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="descripcion" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="now()" nm="created_at" nu="1">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="1">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="opmenu">
+      <TblOpts/>
+      <Pk ClNs="_id" nm="pkopmenu"/>
+      <Cl au="1" df="" nm="_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="descripcion" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="precio" nu="1">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="categorias_id" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="thumb" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="200" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="now()" nm="created_at" nu="1">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="1">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="1" nm="opmenu_categoria_id" prLkCl="_id" upAc="1">
+        <PrTb mn="0" nm="categorias" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="opmenu" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="categorias_id" prCl="_id"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="ordenes">
+      <TblOpts/>
+      <Pk ClNs="_id" nm="pkordenes"/>
+      <Cl au="1" df="" nm="_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="opmenu_id" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="cantidad" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="montotal" nu="1">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="observacion" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="estado" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="mesas_id" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="now()" nm="created_at" nu="1">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="1">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="1" nm="ordenes_mesas_id" prLkCl="_id" upAc="1">
+        <PrTb mn="0" nm="mesas" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="ordenes" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="mesas_id" prCl="_id"/>
+      </Fk>
+      <Fk deAc="1" nm="ordenes_opmenu_id" prLkCl="_id" upAc="1">
+        <PrTb mn="0" nm="opmenu" oe="1" sch="public" zr="0"/>
+        <CdTb mn="0" nm="ordenes" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="opmenu_id" prCl="_id"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="perfiles">
+      <TblOpts/>
+      <Pk ClNs="_id" nm="pkperfiles"/>
+      <Cl au="1" df="" nm="_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="descripcion" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="0" nm="estado" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="now()" nm="created_at" nu="1">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="0">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="1" nm="perfiles_tabgral_id" prLkCl="_id" upAc="1">
+        <PrTb mn="0" nm="tabgral" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="perfiles" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="estado" prCl="_id"/>
+      </Fk>
+      <Idx clu="0" nm="perfiles_tabgral_id" unq="0">
+        <ClNs>estado</ClNs>
+      </Idx>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="sismenu">
+      <TblOpts/>
+      <Pk ClNs="_id" nm="pksismenu"/>
+      <Cl au="1" df="" nm="_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="descripcion" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="0" nm="estado" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="parent" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="iconpath" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="now()" nm="created_at" nu="1">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="1">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="1" nm="sismenu_tabgral_id" prLkCl="_id" upAc="1">
+        <PrTb mn="0" nm="tabgral" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="sismenu" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="estado" prCl="_id"/>
+      </Fk>
+      <Idx clu="0" nm="sismenu_tabgral_id" unq="0">
+        <ClNs>estado</ClNs>
+      </Idx>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="sisperfil">
+      <TblOpts/>
+      <Pk ClNs="_id" nm="pksisperfil"/>
+      <Cl au="1" df="" nm="_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="sismenu_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="perfiles_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="0" nm="estado" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="now()" nm="created_at" nu="1">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="0">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="1" nm="perfiles_id" prLkCl="_id" upAc="1">
+        <PrTb mn="0" nm="perfiles" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="sisperfil" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="perfiles_id" prCl="_id"/>
+      </Fk>
+      <Fk deAc="1" nm="sisperfil_sismenu_id" prLkCl="_id" upAc="1">
+        <PrTb mn="0" nm="sismenu" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="sisperfil" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="sismenu_id" prCl="_id"/>
+      </Fk>
+      <Fk deAc="1" nm="sisperfil_tabgral_id" prLkCl="_id" upAc="1">
+        <PrTb mn="0" nm="tabgral" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="sisperfil" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="estado" prCl="_id"/>
+      </Fk>
+      <Idx clu="0" nm="perfiles_id" unq="0">
+        <ClNs>perfiles_id</ClNs>
+      </Idx>
+      <Idx clu="0" nm="sisperfil_sismenu_id" unq="0">
+        <ClNs>sismenu_id</ClNs>
+      </Idx>
+      <Idx clu="0" nm="sisperfil_tabgral_id" unq="0">
+        <ClNs>estado</ClNs>
+      </Idx>
+      <Idx clu="0" nm="tabgral_id" unq="0">
+        <ClNs>estado</ClNs>
+      </Idx>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="sispermisos">
+      <TblOpts/>
+      <Pk ClNs="_id" nm="pksispermisos"/>
+      <Cl au="1" df="" nm="_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tabla" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="1" nm="flag_read" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="0" nm="flag_insert" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="0" nm="flag_update" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="0" nm="flag_delete" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="perfiles_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="now()" nm="created_at" nu="1">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="0">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="1" nm="sispermisos_perfiles_id" prLkCl="_id" upAc="1">
+        <PrTb mn="0" nm="perfiles" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="sispermisos" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="perfiles_id" prCl="_id"/>
+      </Fk>
+      <Idx clu="0" nm="perfiles_id" unq="0">
+        <ClNs>perfiles_id</ClNs>
+      </Idx>
+      <Idx clu="0" nm="sispermisos_perfiles_id" unq="0">
+        <ClNs>perfiles_id</ClNs>
+      </Idx>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="sisvinculos">
+      <TblOpts/>
+      <Pk ClNs="_id" nm="pksisvinculos"/>
+      <Cl au="1" df="" nm="_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="sismenu_id" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="link" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="250" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="now()" nm="created_at" nu="1">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="0">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="0" nm="sisvinculos_sismenu_id" prLkCl="_id" upAc="0">
+        <PrTb mn="0" nm="sismenu" oe="1" sch="public" zr="0"/>
+        <CdTb mn="0" nm="sisvinculos" oe="1" sch="public" zr="0"/>
+        <ClPr cdCl="sismenu_id" prCl="_id"/>
+      </Fk>
+      <Idx clu="0" nm="sismenu_id" unq="0">
+        <ClNs>sismenu_id</ClNs>
+      </Idx>
+      <Idx clu="0" nm="sisvinculos_sismenu_id" unq="0">
+        <ClNs>sismenu_id</ClNs>
+      </Idx>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tabgral">
+      <TblOpts/>
+      <Pk ClNs="_id" nm="pktabgral"/>
+      <Cl au="1" df="" nm="_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="descripcion" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="grupos_tabgral_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="now()" nm="created_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="0">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="1" nm="grupos_tabgral_id" prLkCl="_id" upAc="1">
+        <PrTb mn="0" nm="grupos_tabgral" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="tabgral" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="grupos_tabgral_id" prCl="_id"/>
+      </Fk>
+      <Idx clu="0" nm="grupos_tabgral_id" unq="0">
+        <ClNs>grupos_tabgral_id</ClNs>
+      </Idx>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="usuarios">
+      <TblOpts/>
+      <Pk ClNs="_id" nm="pkusuarios"/>
+      <Cl au="1" df="" nm="_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="username" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="password" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="apellido" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="email" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="direccion" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="200" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="telefono" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="estado" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="legajo" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="perfiles_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="provincias_id" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="localidades_id" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="activationcode" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tokenforgotpasswd" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="now()" nm="created_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="0">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="1" nm="usuarios_estado" prLkCl="_id" upAc="1">
+        <PrTb mn="0" nm="tabgral" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="usuarios" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="estado" prCl="_id"/>
+      </Fk>
+      <Fk deAc="1" nm="usuarios_perfiles_id" prLkCl="_id" upAc="1">
+        <PrTb mn="0" nm="perfiles" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="usuarios" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="perfiles_id" prCl="_id"/>
+      </Fk>
+      <Idx clu="0" nm="localidades_id" unq="0">
+        <ClNs>localidades_id</ClNs>
+      </Idx>
+      <Idx clu="0" nm="perfiles_id" unq="0">
+        <ClNs>telefono</ClNs>
+      </Idx>
+      <Idx clu="0" nm="perfiles_id_usuarios" unq="0">
+        <ClNs>perfiles_id</ClNs>
+      </Idx>
+      <Idx clu="0" nm="provincias_id" unq="0">
+        <ClNs>provincias_id</ClNs>
+      </Idx>
+      <Idx clu="0" nm="tabgral_id" unq="0">
+        <ClNs>direccion</ClNs>
+      </Idx>
+      <Idx clu="0" nm="usuarios_estado" unq="0">
+        <ClNs>estado</ClNs>
+      </Idx>
+      <Idx clu="0" nm="usuarios_perfiles_id" unq="0">
+        <ClNs>perfiles_id</ClNs>
+      </Idx>
+      <Idx clu="0" nm="usuarios_provincias_id" unq="0">
+        <ClNs>provincias_id</ClNs>
+      </Idx>
+      <SchTrHis/>
+    </Tbl>
+    <CustomTypes/>
+  </Sch>
+  <Dgm nm="public">
+    <RnCf FtSz="10" lkStgy="OffsetDirect" zm="1.0">
+      <VbCfg>
+        <Fg ky="Auto Number" vl="1"/>
+        <Fg ky="Check" vl="0"/>
+        <Fg ky="Comment" vl="0"/>
+        <Fg ky="Data Type" vl="0"/>
+        <Fg ky="Default" vl="0"/>
+        <Fg ky="ENUM Values" vl="0"/>
+        <Fg ky="Length" vl="0"/>
+        <Fg ky="Name" vl="1"/>
+        <Fg ky="Nullable" vl="0"/>
+        <Fg ky="Schema Name" vl="0"/>
+        <Fg ky="Signed" vl="0"/>
+      </VbCfg>
+    </RnCf>
+    <DiaProps>
+      <Show AllCols="1" FkCols="1" FkNms="0" PkCols="1"/>
+      <ErNotation>DbwErNotation</ErNotation>
+      <svg path=""/>
+    </DiaProps>
+    <TbGl bkCl="ffccccff" sch="public" tbl="sismenu" x="159" y="40"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="perfiles" x="666" y="47"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="usuarios" x="935" y="34"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="sisperfil" x="392" y="30"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="sisvinculos" x="162" y="169"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="sispermisos" x="164" y="261"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="tabgral" x="675" y="245"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="grupos_tabgral" x="460" y="267"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="mesas" x="718" y="529"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="menues" x="473" y="527"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="categorias" x="248" y="726"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="opmenu" x="245" y="531"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="ordenes" x="719" y="680"/>
+    <FkGl bkCl="ff000000" nm="public.opmenu.opmenu_categoria_id"/>
+    <FkGl bkCl="ff000000" nm="public.ordenes.ordenes_mesas_id"/>
+    <FkGl bkCl="ff000000" nm="public.ordenes.ordenes_opmenu_id"/>
+    <FkGl bkCl="ff000000" nm="public.perfiles.perfiles_tabgral_id"/>
+    <FkGl bkCl="ff000000" nm="public.sismenu.sismenu_tabgral_id"/>
+    <FkGl bkCl="ff000000" nm="public.sisperfil.perfiles_id"/>
+    <FkGl bkCl="ff000000" nm="public.sisperfil.sisperfil_sismenu_id"/>
+    <FkGl bkCl="ff000000" nm="public.sisperfil.sisperfil_tabgral_id"/>
+    <FkGl bkCl="ff000000" nm="public.sispermisos.sispermisos_perfiles_id"/>
+    <FkGl bkCl="ff000000" nm="public.sisvinculos.sisvinculos_sismenu_id"/>
+    <FkGl bkCl="ff000000" nm="public.tabgral.grupos_tabgral_id"/>
+    <FkGl bkCl="ff000000" nm="public.usuarios.usuarios_estado"/>
+    <FkGl bkCl="ff000000" nm="public.usuarios.usuarios_perfiles_id"/>
+    <Notes/>
+    <Zones>
+      <Zone bkCl="ffece9d8" h="1231" nm="módulo autetinficación de usuarios" w="394" x="133" y="9"/>
+      <Zone bkCl="ffece9d8" h="1231" nm="Módulo principal" w="542" x="133" y="447"/>
+    </Zones>
+  </Dgm>
+  <RnmMgr NxRnmId="227">
+    <RnmCh ObjCls="Schema" ParCls="Database" ParNme="callcenter" SupCls="" SupNme="">
+      <Rnm id="1" nNm="public" oNm="schemaA"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pautas" SupCls="Schema" SupNme="public">
+      <Rnm id="2" nNm="pautas_fecha_devolucion_lote" oNm="pautas_fecha_devolucion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm id="4" nNm="personas" oNm="deudoresprospectos"/>
+      <Rnm id="3" nNm="deudoresprospectos" oNm="deudores"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="personas" SupCls="Schema" SupNme="public">
+      <Rnm id="5" nNm="personas_id" oNm="deudores_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="personas" SupCls="Schema" SupNme="public">
+      <Rnm id="6" nNm="personas_nombre" oNm="deudores_nombre"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="personas" SupCls="Schema" SupNme="public">
+      <Rnm id="7" nNm="personas_apellido" oNm="deudores_apellido"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="personas" SupCls="Schema" SupNme="public">
+      <Rnm id="8" nNm="personas_telefono" oNm="deudores_telefono"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sismenu" SupCls="Schema" SupNme="public">
+      <Rnm id="174" nNm="estado" oNm="sismenu_estado"/>
+      <Rnm id="9" nNm="sismenu_estado" oNm="sismenu_habilitado"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sispermisos" SupCls="Schema" SupNme="public">
+      <Rnm id="202" nNm="_id" oNm="sispermisos_id"/>
+      <Rnm id="10" nNm="sispermisos_id" oNm="sispermisos"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="empleados" SupCls="Schema" SupNme="public">
+      <Rnm id="11" nNm="empleados_apellido" oNm="empleados_aoellido"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="empleados" SupCls="Schema" SupNme="public">
+      <Rnm id="12" nNm="empleados_fecha_alta" oNm="empleados_fecha_creacion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sispermisos" SupCls="Schema" SupNme="public">
+      <Rnm id="208" nNm="created_at" oNm="sispermisos_created_at"/>
+      <Rnm id="93" nNm="sispermisos_created_at" oNm="sispermisos_fecha_alta"/>
+      <Rnm id="13" nNm="sispermisos_fecha_alta" oNm="sispermisos_fecha_creacion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sisvinculos" SupCls="Schema" SupNme="public">
+      <Rnm id="181" nNm="created_at" oNm="sisvinculos_created_at"/>
+      <Rnm id="91" nNm="sisvinculos_created_at" oNm="sisvinculos_fecha_alta"/>
+      <Rnm id="14" nNm="sisvinculos_fecha_alta" oNm="sisvinculos_fecha_creacion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sismenu" SupCls="Schema" SupNme="public">
+      <Rnm id="176" nNm="iconpath" oNm="sismenu_iconpath"/>
+      <Rnm id="142" nNm="sismenu_iconpath" oNm="sismenu_imagepath"/>
+      <Rnm id="140" nNm="sismenu_imagepath" oNm="sismenu_created_at"/>
+      <Rnm id="89" nNm="sismenu_created_at" oNm="sismenu_fecha_alta"/>
+      <Rnm id="15" nNm="sismenu_fecha_alta" oNm="sismenu_fecha_creacion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sisperfil" SupCls="Schema" SupNme="public">
+      <Rnm id="212" nNm="created_at" oNm="sisperfil_created_at"/>
+      <Rnm id="90" nNm="sisperfil_created_at" oNm="sisperfil_fecha_alta"/>
+      <Rnm id="16" nNm="sisperfil_fecha_alta" oNm="sisperfil_fecha_creacion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="perfiles" SupCls="Schema" SupNme="public">
+      <Rnm id="200" nNm="created_at" oNm="perfiles_created_at"/>
+      <Rnm id="92" nNm="perfiles_created_at" oNm="perfiles_fecha_alta"/>
+      <Rnm id="17" nNm="perfiles_fecha_alta" oNm="perfiles_fecha_creacion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="lotes" SupCls="Schema" SupNme="public">
+      <Rnm id="18" nNm="lotes_fecha_recepcion" oNm="lotes_fecha_ingreso"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="lotes" SupCls="Schema" SupNme="public">
+      <Rnm id="19" nNm="lotes_fecha_vencimiento" oNm="lotes_plazo_validez"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="lotes" SupCls="Schema" SupNme="public">
+      <Rnm id="20" nNm="lotes_dias_en_gestion" oNm="lostes_dias_en_gestion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="cuentas" SupCls="Schema" SupNme="public">
+      <Rnm id="21" nNm="cuentas_nro_asignacion" oNm="cuentas_nro_asig_art"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="cuentas" SupCls="Schema" SupNme="public">
+      <Rnm id="22" nNm="cuentas_fecha_inicio" oNm="cuentas_fecha_inicio_deuda"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="personas" SupCls="Schema" SupNme="public">
+      <Rnm id="23" nNm="personas_matricula" oNm="personas_matriculo"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="lotes" SupCls="Schema" SupNme="public">
+      <Rnm id="24" nNm="pautas_id" oNm="lotes_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="cuentas" SupCls="Schema" SupNme="public">
+      <Rnm id="25" nNm="personas_id" oNm="cuentas_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="telefonos" SupCls="Schema" SupNme="public">
+      <Rnm id="26" nNm="telefonos_destacado" oNm="telefonos_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="domicilios" SupCls="Schema" SupNme="public">
+      <Rnm id="27" nNm="provincias_id" oNm="provincia_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="domicilios" SupCls="Schema" SupNme="public">
+      <Rnm id="28" nNm="localidades_id" oNm="localidad_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="domicilios" SupCls="Schema" SupNme="public">
+      <Rnm id="29" nNm="localidades_descrip" oNm="domicilios_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pautas" SupCls="Schema" SupNme="public">
+      <Rnm id="30" nNm="lotes_id" oNm="pautas_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="eventosaccion" SupCls="Schema" SupNme="public">
+      <Rnm id="37" nNm="eventosaccion_descripcion" oNm="eventos_descripcion"/>
+      <Rnm id="31" nNm="eventos_descripcion" oNm="evento_descripcion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="eventosaccion" SupCls="Schema" SupNme="public">
+      <Rnm id="38" nNm="eventosaccion_observacion" oNm="eventos_observacion"/>
+      <Rnm id="32" nNm="eventos_observacion" oNm="evento_observacion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="agendaslineas" SupCls="Schema" SupNme="public">
+      <Rnm id="33" nNm="angedas_id" oNm="cuentas_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="agendaslineas" SupCls="Schema" SupNme="public">
+      <Rnm id="34" nNm="cuentas_id" oNm="agendaslineas_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm id="35" nNm="eventosaccion" oNm="eventos"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="eventosaccion" SupCls="Schema" SupNme="public">
+      <Rnm id="36" nNm="eventosaccion_id" oNm="eventos_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="eventosaccion" SupCls="Schema" SupNme="public">
+      <Rnm id="39" nNm="eventosaccion_fecha_alta" oNm="eventos_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="listaeventos" SupCls="Schema" SupNme="public">
+      <Rnm id="40" nNm="eventosaccion_id" oNm="eventos_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="listaeventos" SupCls="Schema" SupNme="public">
+      <Rnm id="44" nNm="listaeventos_observacion" oNm="eventosressult_id"/>
+      <Rnm id="42" nNm="eventosressult_id" oNm="eventosresult_id"/>
+      <Rnm id="41" nNm="eventosresult_id" oNm="listaeventos_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="listaeventos" SupCls="Schema" SupNme="public">
+      <Rnm id="43" nNm="eventosresult_id" oNm="listaeventos_observacion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pagosacuentas" SupCls="Schema" SupNme="public">
+      <Rnm id="45" nNm="cuentas_id" oNm="pagosacuenta_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm id="46" nNm="pagosacuentas" oNm="pagosacuenta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pagosacuentas" SupCls="Schema" SupNme="public">
+      <Rnm id="47" nNm="pagosacuentas_id" oNm="pagosacuenta_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pagosacuentas" SupCls="Schema" SupNme="public">
+      <Rnm id="48" nNm="pagosacuentas_montodeuda" oNm="pagosacuenta_montodeuda"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pagosacuentas" SupCls="Schema" SupNme="public">
+      <Rnm id="53" nNm="estadopagos_id" oNm="pagosacuentas_fecha_alta"/>
+      <Rnm id="49" nNm="pagosacuentas_fecha_alta" oNm="pagosacuenta_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="plandepagos" SupCls="Schema" SupNme="public">
+      <Rnm id="50" nNm="cuentas_id" oNm="plandepagos_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm id="51" nNm="pagoscancelatorios" oNm="pagoscancelatios"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pagoscancelatorios" SupCls="Schema" SupNme="public">
+      <Rnm id="52" nNm="estadopagos_id" oNm="pagoscancelatorios_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="plandepagos" SupCls="Schema" SupNme="public">
+      <Rnm id="55" nNm="estadopagos_id" oNm="estadopagos"/>
+      <Rnm id="54" nNm="estadopagos" oNm="plandepagos_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="cuentas" SupCls="Schema" SupNme="public">
+      <Rnm id="56" nNm="subestadoscuentas_id" oNm="cuentas_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="agendas" SupCls="Schema" SupNme="public">
+      <Rnm id="57" nNm="usuarios_idemisor" oNm="empleados_idemisor"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="agendas" SupCls="Schema" SupNme="public">
+      <Rnm id="58" nNm="usuarios_idreceptor" oNm="empleados_idreceptor"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="agendas" SupCls="Schema" SupNme="public">
+      <Rnm id="59" nNm="cuentas_id" oNm="agendas_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pagoscancelatorios" SupCls="Schema" SupNme="public">
+      <Rnm id="61" nNm="pagoscancelatorios_autorizado" oNm="pagoscancelatorios_trabaja"/>
+      <Rnm id="60" nNm="pagoscancelatorios_trabaja" oNm="pagoscancelatorios_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="personas" SupCls="Schema" SupNme="public">
+      <Rnm id="62" nNm="personas_empleados" oNm="personas_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="personas" SupCls="Schema" SupNme="public">
+      <Rnm id="63" nNm="personas_monto_total" oNm="personas_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="domicilios" SupCls="Schema" SupNme="public">
+      <Rnm id="64" nNm="tipodomicilios_id" oNm="domicilios_tipo"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm id="65" nNm="tabgral" oNm="estados"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="tabgral" SupCls="Schema" SupNme="public">
+      <Rnm id="214" nNm="_id" oNm="tabgral_id"/>
+      <Rnm id="66" nNm="tabgral_id" oNm="estados_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="tabgral" SupCls="Schema" SupNme="public">
+      <Rnm id="215" nNm="descripcion" oNm="tabgral_descripcion"/>
+      <Rnm id="67" nNm="tabgral_descripcion" oNm="estados_descripcion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="189" nNm="direccion" oNm="usuarios_direccion"/>
+      <Rnm id="68" nNm="usuarios_direccion" oNm="usuarios_estado"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="190" nNm="telefono" oNm="usuarios_telefono"/>
+      <Rnm id="69" nNm="usuarios_telefono" oNm="perfiles_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="191" nNm="estado" oNm="usuarios_estado"/>
+      <Rnm id="70" nNm="usuarios_estado" oNm="usuarios_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="94" nNm="usuarios_" oNm="usuarios_fecha_alta"/>
+      <Rnm id="76" nNm="usuarios_fecha_alta" oNm="usuarios_fecha_c"/>
+      <Rnm id="71" nNm="usuarios_fecha_c" oNm="usuarios_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="turnos" SupCls="Schema" SupNme="public">
+      <Rnm id="72" nNm="turnos_capacidad" oNm="turnos_capacidadi"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="materias" SupCls="Schema" SupNme="public">
+      <Rnm id="73" nNm="materias_periodolectivo" oNm="materias_tipo"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="turnoslineas" SupCls="Schema" SupNme="public">
+      <Rnm id="77" nNm="turnoslineas_observaciones" oNm="turnoslineas_obervaciones"/>
+      <Rnm id="74" nNm="turnoslineas_obervaciones" oNm="turnoslineas_fecha_c"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="turnoslineas" SupCls="Schema" SupNme="public">
+      <Rnm id="75" nNm="turnoslineas_fecha_alta" oNm="turnoslineas_fecha_u"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="turnoslineas" SupCls="Schema" SupNme="public">
+      <Rnm id="87" nNm="turnoslineas_fechaini" oNm="turnoslineas_horaini"/>
+      <Rnm id="78" nNm="turnoslineas_horaini" oNm="turnoslineas_hora"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="audit" SupCls="Schema" SupNme="public">
+      <Rnm id="79" nNm="audit_tabla" oNm="tabla"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="audit" SupCls="Schema" SupNme="public">
+      <Rnm id="80" nNm="audit_evento" oNm="vento"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="81" nNm="localidades_id" oNm="localidadades_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="turnos" SupCls="Schema" SupNme="public">
+      <Rnm id="82" nNm="turnos_fechaini" oNm="turnos_fecha"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="turnos" SupCls="Schema" SupNme="public">
+      <Rnm id="83" nNm="turnos_fechafin" oNm="turnos_horaini"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="turnoslineas" SupCls="Schema" SupNme="public">
+      <Rnm id="84" nNm="tipoconsultas_id" oNm="turnoslineas_consulta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm id="85" nNm="tipoconsultas" oNm="tipoconsutas"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="tipoconsultas" SupCls="Schema" SupNme="public">
+      <Rnm id="86" nNm="tipoconsultas_duracion" oNm="tipoconsultas_fecha_alta"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="turnoslineas" SupCls="Schema" SupNme="public">
+      <Rnm id="88" nNm="turnoslineas_fechafin" oNm="turnoslineas_horafin"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="historialprecios" SupCls="Schema" SupNme="public">
+      <Rnm id="95" nNm="historialprecios_precioventa" oNm="historialprecios_precio"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="articulos" SupCls="Schema" SupNme="public">
+      <Rnm id="96" nNm="articulos_stockreal" oNm="articulos_observaciones"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="articulos" SupCls="Schema" SupNme="public">
+      <Rnm id="124" nNm="rubros_id" oNm="tipoarticulo_id"/>
+      <Rnm id="97" nNm="tipoarticulo_id" oNm="articulos_created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="articulos" SupCls="Schema" SupNme="public">
+      <Rnm id="101" nNm="articulos_observaciones" oNm="articulos_created_at"/>
+      <Rnm id="98" nNm="articulos_created_at" oNm="articulos_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="historialprecios" SupCls="Schema" SupNme="public">
+      <Rnm id="99" nNm="historialprecios_porcentaje" oNm="historialprecios_created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="historialprecios" SupCls="Schema" SupNme="public">
+      <Rnm id="100" nNm="historialprecios_created_at" oNm="historialprecios_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="articulos" SupCls="Schema" SupNme="public">
+      <Rnm id="114" nNm="articulos_precio1" oNm="articulos_created_at"/>
+      <Rnm id="102" nNm="articulos_created_at" oNm="articulos_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm id="103" nNm="pedidodetalle" oNm="pedido_detalle"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm id="104" nNm="fleteros" oNm="fletero"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="fleteros" SupCls="Schema" SupNme="public">
+      <Rnm id="105" nNm="fleteros_id" oNm="fletero_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="fleteros" SupCls="Schema" SupNme="public">
+      <Rnm id="106" nNm="fleteros_nombre" oNm="fletero_nombre"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="fleteros" SupCls="Schema" SupNme="public">
+      <Rnm id="107" nNm="fleteros_apellido" oNm="fletero_apellido"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pedidodetalle" SupCls="Schema" SupNme="public">
+      <Rnm id="108" nNm="pedidos_id" oNm="pedidodetalle_cantidad"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pedidodetalle" SupCls="Schema" SupNme="public">
+      <Rnm id="109" nNm="articulos_id" oNm="pedidodetalle_montoacordado"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pedidodetalle" SupCls="Schema" SupNme="public">
+      <Rnm id="110" nNm="pedidodetalle_cantidad" oNm="pedidodetalle_created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pedidodetalle" SupCls="Schema" SupNme="public">
+      <Rnm id="111" nNm="pedidodetalle_montoacordado" oNm="pedidodetalle_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="clientes" SupCls="Schema" SupNme="public">
+      <Rnm id="112" nNm="clientes_categoria" oNm="clientes_created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="clientes" SupCls="Schema" SupNme="public">
+      <Rnm id="113" nNm="clientes_created_at" oNm="clientes_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="articulos" SupCls="Schema" SupNme="public">
+      <Rnm id="115" nNm="articulos_precio2" oNm="articulos_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm id="116" nNm="remitos" oNm="remito"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="remitos" SupCls="Schema" SupNme="public">
+      <Rnm id="117" nNm="remitos_id" oNm="remito_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pedidos" SupCls="Schema" SupNme="public">
+      <Rnm id="118" nNm="clientes_id" oNm="pedidos_created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pedidos" SupCls="Schema" SupNme="public">
+      <Rnm id="138" nNm="pedidos_estado" oNm="pedidos_created_at"/>
+      <Rnm id="119" nNm="pedidos_created_at" oNm="pedidos_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pedidodetalle" SupCls="Schema" SupNme="public">
+      <Rnm id="120" nNm="pedidodetalle_subtotal" oNm="pedidodetalle_created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pedidodetalle" SupCls="Schema" SupNme="public">
+      <Rnm id="121" nNm="pedidodetalle_created_at" oNm="pedidodetalle_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="articulos" SupCls="Schema" SupNme="public">
+      <Rnm id="128" nNm="articulos_porcentaje1" oNm="articulos_porcentaje"/>
+      <Rnm id="122" nNm="articulos_porcentaje" oNm="articulos_created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="articulos" SupCls="Schema" SupNme="public">
+      <Rnm id="129" nNm="articulos_porcentaje2" oNm="articulos_estado"/>
+      <Rnm id="125" nNm="articulos_estado" oNm="articulos_created_at"/>
+      <Rnm id="123" nNm="articulos_created_at" oNm="articulos_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="articulos" SupCls="Schema" SupNme="public">
+      <Rnm id="130" nNm="articulos_porcentaje3" oNm="articulos_created_at"/>
+      <Rnm id="127" nNm="articulos_created_at" oNm="articulos_created_At"/>
+      <Rnm id="126" nNm="articulos_created_At" oNm="articulos_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="articulos" SupCls="Schema" SupNme="public">
+      <Rnm id="131" nNm="articulos_estado" oNm="articulos_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="remitos" SupCls="Schema" SupNme="public">
+      <Rnm id="132" nNm="hojaruta_id" oNm="remitos_created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="remitos" SupCls="Schema" SupNme="public">
+      <Rnm id="136" nNm="remitos_estado" oNm="remitos_created_at"/>
+      <Rnm id="133" nNm="remitos_created_at" oNm="remitos_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="hojaruta" SupCls="Schema" SupNme="public">
+      <Rnm id="134" nNm="hojaruta_estado" oNm="hojaruta_created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="hojaruta" SupCls="Schema" SupNme="public">
+      <Rnm id="135" nNm="hojaruta_created_at" oNm="hojaruta_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="remitos" SupCls="Schema" SupNme="public">
+      <Rnm id="137" nNm="remitos_created_at" oNm="remitos_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="pedidos" SupCls="Schema" SupNme="public">
+      <Rnm id="139" nNm="pedidos_created_at" oNm="pedidos_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sismenu" SupCls="Schema" SupNme="public">
+      <Rnm id="177" nNm="created_at" oNm="sismenu_created_at"/>
+      <Rnm id="141" nNm="sismenu_created_at" oNm="sismenu_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm id="143" nNm="iluconfig" oNm="iluminacion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="iluconfig" SupCls="Schema" SupNme="public">
+      <Rnm id="144" nNm="iluconfig_id" oNm="iluminacion_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="iluconfig" SupCls="Schema" SupNme="public">
+      <Rnm id="145" nNm="iluconfig_descripcion" oNm="iluminacion_descripcion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="iluconfig" SupCls="Schema" SupNme="public">
+      <Rnm id="146" nNm="iluconfig_created_at" oNm="iluminacion_created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="iluconfig" SupCls="Schema" SupNme="public">
+      <Rnm id="147" nNm="iluconfig_updated_at" oNm="iluminacion_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="salidad" SupCls="Schema" SupNme="public">
+      <Rnm id="148" nNm="salidad_modulo" oNm="salidad_created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="salidad" SupCls="Schema" SupNme="public">
+      <Rnm id="151" nNm="salidad_descripcion" oNm="salidad_created_at"/>
+      <Rnm id="149" nNm="salidad_created_at" oNm="salidad_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="salidad" SupCls="Schema" SupNme="public">
+      <Rnm id="152" nNm="salidad_created_at" oNm="salidad_updated_at"/>
+      <Rnm id="150" nNm="salidad_updated_at" oNm="salidad"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm id="153" nNm="salidaa" oNm="salidada"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="salidaa" SupCls="Schema" SupNme="public">
+      <Rnm id="154" nNm="salidaa_nombre" oNm="salidada_nombre"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="salidaa" SupCls="Schema" SupNme="public">
+      <Rnm id="155" nNm="salidaa_value" oNm="salidada_value"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="entradad" SupCls="Schema" SupNme="public">
+      <Rnm id="156" nNm="entradad_descripcion" oNm="entradad_created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="entradad" SupCls="Schema" SupNme="public">
+      <Rnm id="157" nNm="entradad_created_at" oNm="entradad_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="entradad" SupCls="Schema" SupNme="public">
+      <Rnm id="158" nNm="entradad_updated_at" oNm="entradad"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="salidaa" SupCls="Schema" SupNme="public">
+      <Rnm id="159" nNm="salidaa_id" oNm="salidada_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm id="160" nNm="opmenu" oNm="menuop"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="opmenu" SupCls="Schema" SupNme="public">
+      <Rnm id="161" nNm="nombre" oNm="descripcion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="opmenu" SupCls="Schema" SupNme="public">
+      <Rnm id="162" nNm="descripcion" oNm="precio"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="opmenu" SupCls="Schema" SupNme="public">
+      <Rnm id="163" nNm="precio" oNm="categoria_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="opmenu" SupCls="Schema" SupNme="public">
+      <Rnm id="171" nNm="categorias_id" oNm="categoria_id"/>
+      <Rnm id="164" nNm="categoria_id" oNm="created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="opmenu" SupCls="Schema" SupNme="public">
+      <Rnm id="225" nNm="thumb" oNm="image"/>
+      <Rnm id="224" nNm="image" oNm="created_at"/>
+      <Rnm id="165" nNm="created_at" oNm="updated()"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="ordenes" SupCls="Schema" SupNme="public">
+      <Rnm id="166" nNm="estado" oNm="created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="ordenes" SupCls="Schema" SupNme="public">
+      <Rnm id="170" nNm="mesas_id" oNm="mesa_id"/>
+      <Rnm id="168" nNm="mesa_id" oNm="created_at"/>
+      <Rnm id="167" nNm="created_at" oNm="updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="ordenes" SupCls="Schema" SupNme="public">
+      <Rnm id="169" nNm="created_at" oNm="updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sismenu" SupCls="Schema" SupNme="public">
+      <Rnm id="172" nNm="_id" oNm="sismenu_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sismenu" SupCls="Schema" SupNme="public">
+      <Rnm id="173" nNm="descripcion" oNm="sismenu_descripcion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sismenu" SupCls="Schema" SupNme="public">
+      <Rnm id="175" nNm="parent" oNm="sismenu_parent"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sismenu" SupCls="Schema" SupNme="public">
+      <Rnm id="178" nNm="updated_at" oNm="sismenu_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sisvinculos" SupCls="Schema" SupNme="public">
+      <Rnm id="179" nNm="_id" oNm="sisvinculos_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sisvinculos" SupCls="Schema" SupNme="public">
+      <Rnm id="180" nNm="link" oNm="sisvinculos_link"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sisvinculos" SupCls="Schema" SupNme="public">
+      <Rnm id="182" nNm="updated_at" oNm="sisvinculos_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="183" nNm="_id" oNm="usuarios_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="184" nNm="username" oNm="usuarios_username"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="185" nNm="password" oNm="usuarios_password"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="186" nNm="nombre" oNm="usuarios_nombre"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="187" nNm="apellido" oNm="usuarios_apellido"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="188" nNm="email" oNm="usuarios_email"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="192" nNm="legajo" oNm="usuarios_legajo"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="193" nNm="activationcode" oNm="usuarios_activationcode"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="194" nNm="tokenforgotpasswd" oNm="usuarios_tokenforgotpasswd"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="195" nNm="created_at" oNm="usuarios_created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="usuarios" SupCls="Schema" SupNme="public">
+      <Rnm id="196" nNm="updated_at" oNm="usuarios_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="perfiles" SupCls="Schema" SupNme="public">
+      <Rnm id="197" nNm="_id" oNm="perfiles_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="perfiles" SupCls="Schema" SupNme="public">
+      <Rnm id="198" nNm="descripcion" oNm="perfiles_descripcion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="perfiles" SupCls="Schema" SupNme="public">
+      <Rnm id="199" nNm="estado" oNm="perfiles_estado"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="perfiles" SupCls="Schema" SupNme="public">
+      <Rnm id="201" nNm="updated_at" oNm="perfiles_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sispermisos" SupCls="Schema" SupNme="public">
+      <Rnm id="203" nNm="tabla" oNm="sispermisos_tabla"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sispermisos" SupCls="Schema" SupNme="public">
+      <Rnm id="204" nNm="flag_read" oNm="sispermisos_flag_read"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sispermisos" SupCls="Schema" SupNme="public">
+      <Rnm id="205" nNm="flag_insert" oNm="sispermisos_flag_insert"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sispermisos" SupCls="Schema" SupNme="public">
+      <Rnm id="206" nNm="flag_update" oNm="sispermisos_flag_update"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sispermisos" SupCls="Schema" SupNme="public">
+      <Rnm id="207" nNm="flag_delete" oNm="sispermisos_flag_delete"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sispermisos" SupCls="Schema" SupNme="public">
+      <Rnm id="209" nNm="updated_at" oNm="sispermisos_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sisperfil" SupCls="Schema" SupNme="public">
+      <Rnm id="210" nNm="_id" oNm="sisperfil_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sisperfil" SupCls="Schema" SupNme="public">
+      <Rnm id="211" nNm="estado" oNm="sisperfil_estado"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="sisperfil" SupCls="Schema" SupNme="public">
+      <Rnm id="213" nNm="updated_at" oNm="sisperfil_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="tabgral" SupCls="Schema" SupNme="public">
+      <Rnm id="216" nNm="created_at" oNm="tabgral_created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="tabgral" SupCls="Schema" SupNme="public">
+      <Rnm id="217" nNm="updated_at" oNm="tabgral_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="grupos_tabgral" SupCls="Schema" SupNme="public">
+      <Rnm id="218" nNm="_id" oNm="grupos_tabgral_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="grupos_tabgral" SupCls="Schema" SupNme="public">
+      <Rnm id="219" nNm="descripcion" oNm="grupos_tabgral_descripcion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="grupos_tabgral" SupCls="Schema" SupNme="public">
+      <Rnm id="220" nNm="created_at" oNm="grupos_tabgral_created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="grupos_tabgral" SupCls="Schema" SupNme="public">
+      <Rnm id="221" nNm="updated_at" oNm="grupos_tabgral_updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="mesas" SupCls="Schema" SupNme="public">
+      <Rnm id="222" nNm="descripcion" oNm="created_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="mesas" SupCls="Schema" SupNme="public">
+      <Rnm id="223" nNm="created_at" oNm="updated_at"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="opmenu" SupCls="Schema" SupNme="public">
+      <Rnm id="226" nNm="created_at" oNm="updated_at"/>
+    </RnmCh>
+  </RnmMgr>
+  <DbDocOptionMgr>
+    <BasicOptionMgr>
+      <Name>db.doc.option.mgr</Name>
+      <BoolOpt lbl="Diagrams" nm="doc.diagrams" on="1" spl="0"/>
+      <BoolOpt lbl="Foreign Keys" nm="doc.fks" on="1" spl="0"/>
+      <BoolOpt lbl="Indexes" nm="doc.indexes" on="1" spl="0"/>
+      <BoolOpt lbl="Overwrite CSS File" nm="doc.overwrite.css" on="1" spl="0"/>
+      <BoolOpt lbl="Procedures" nm="doc.procs" on="1" spl="0"/>
+      <BoolOpt lbl="Schemas" nm="doc.schemas" on="1" spl="0"/>
+      <BoolOpt lbl="Sequences" nm="doc.sequences" on="1" spl="0"/>
+      <BoolOpt lbl="Tables" nm="doc.tables" on="1" spl="0"/>
+      <BoolOpt lbl="Triggers" nm="doc.triggers" on="1" spl="0"/>
+      <BoolOpt lbl="Views" nm="doc.views" on="1" spl="0"/>
+    </BasicOptionMgr>
+  </DbDocOptionMgr>
+  <OpenEditors>
+    <OpenEditor ClsNm="Diagram" fqn="null.public" selected="1"/>
+  </OpenEditors>
+  <TreePaths>
+    <TreePath/>
+    <TreePath>/Schemas (1)</TreePath>
+    <TreePath>/Schemas (1)/public</TreePath>
+    <TreePath>/Schemas (1)/public/Tables (13)</TreePath>
+  </TreePaths>
+</Db>
