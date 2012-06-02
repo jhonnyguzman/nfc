@@ -13,7 +13,7 @@
 		</div>		
 	<?php endif; ?>
 	
-	<form action="<?=base_url()?>opmenu_controller/add_c" method="post" name="formAddopmenu" id="formAddopmenu" class="form-horizontal">
+	<form action="<?=base_url()?>opmenu_controller/add_c" method="post" enctype="multipart/form-data" name="formAddopmenu" id="formAddopmenu" class="form-horizontal" >
 		<div class="control-group">
 			<label class="control-label" for="nombre"><?=$this->config->item('nombre')?>:</label>
 			<div class="controls">
@@ -40,6 +40,12 @@
 						<option value="<?=$f->_id?>"><?=$f->descripcion?></option>
 					<?php endforeach;?>
 				</select>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="thumb"><?=$this->config->item('thumb')?>:</label>
+			<div class="controls">
+				<input type="file" name="thumb" id="thumb"/>
 			</div>
 		</div>
 

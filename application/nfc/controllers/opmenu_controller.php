@@ -8,6 +8,8 @@ class Opmenu_Controller extends CI_Controller {
 	private $flagU;
 	private $flagD;
 	private $flags;
+	private $flag_override_img = FALSE;
+	private $name_thumb = '';
 
 	function __construct()
 	{
@@ -68,6 +70,7 @@ class Opmenu_Controller extends CI_Controller {
 			$data_opmenu['descripcion'] = $this->input->post('descripcion');
 			$data_opmenu['precio'] = $this->input->post('precio');
 			$data_opmenu['categorias_id'] = $this->input->post('categorias_id');
+			$data_opmenu['thumb'] = $this->upload();
 			$data_opmenu['updated_at'] = $this->basicrud->formatDateToBD();
 
 			$id_opmenu = $this->opmenu_model->add_m($data_opmenu);
@@ -78,6 +81,7 @@ class Opmenu_Controller extends CI_Controller {
 				$this->session->set_flashdata('flashError', $this->config->item('opmenu_flash_error_message')); 
 				redirect('opmenu_controller','location');
 			}
+
 		}else{
 			$data['categorias'] = $this->categorias_model->get_m();
 			$this->load->view('opmenu_view/form_add_opmenu',$data);
@@ -209,4 +213,57 @@ class Opmenu_Controller extends CI_Controller {
 
 	}
 
+
+
+	function upload()
+	{
+		$this->load->helper('string');
+		
+		$config['upload_path'] = './thumbs/';
+		$config['allowed_types'] = 'jpg|png';
+		if($this->flag_override_img == FALSE){
+			$config['file_name'] = 'thumb_'.random_string('alnum', 25);
+		}else{
+			if($this->name_thumb == ''){
+				$config['file_name'] = 'thumb_'.random_string('alnum', 25);
+			}else{
+				$config['file_name'] = $this->name_thumb;
+				$config['overwrite'] = $this->flag_override_img;
+			}
+		}
+
+		$this->load->library('upload', $config);
+
+		if ( ! $this->upload->do_upload('thumb'))
+		{
+			//$error = array('error' => $this->upload->display_errors());
+			return null;
+		}
+		else
+		{
+			$data = $this->upload->data();
+			return $data['file_name'];
+		}
+	}
+
+
+	function editimg($opmenu_id)
+	{
+		$opmenu = $this->opmenu_model->get_m(array('_id' => $opmenu_id));
+
+		if($opmenu[0]->thumb) $this->name_thumb = $opmenu[0]->thumb;
+		$this->flag_override_img = TRUE;
+
+		$data_opmenu['_id'] = $opmenu_id;
+		$data_opmenu['thumb'] = $this->upload();
+
+		if($this->opmenu_model->edit_m($data_opmenu)){
+			$this->session->set_flashdata('flashConfirm', $this->config->item('opmenu_flash_edit_message')); 
+			redirect('opmenu_controller','location');
+		}else{
+			$this->session->set_flashdata('flashError', $this->config->item('opmenu_flash_error_message')); 
+			redirect('opmenu_controller','location');
+		}
+
+	}
 }

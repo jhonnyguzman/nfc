@@ -17,6 +17,7 @@ $config['descripcion']='Descripci&oacute;n';
 $config['precio']='Precio';
 $config['categorias_id']='Categoria';
 $config['categoria_descripcion']='Categoria';
+$config['thumb']='Im&aacute;gen';
 $config['created_at']='Fecha de alta';
 $config['updated_at']='Actualizado el';
 
@@ -38,6 +39,7 @@ $config['show_descripcion']= 1;
 $config['show_precio']= 1;
 $config['show_categorias_id']= 1;
 $config['show_categoria_descripcion']= 1;
+$config['show_thumb']= 1;
 $config['show_created_at']= 1;
 $config['show_updated_at']= 1;
 

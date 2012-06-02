@@ -42,6 +42,8 @@ class Opmenu_Model extends CI_Model {
 			$this->db->set('precio', $options['precio']);
 		if(isset($options['categorias_id']))
 			$this->db->set('categorias_id', $options['categorias_id']);
+		if(isset($options['thumb']))
+			$this->db->set('thumb', $options['thumb']);
 		if(isset($options['created_at']))
 			$this->db->set('created_at', $options['created_at']);
 		if(isset($options['updated_at']))
@@ -93,6 +95,8 @@ class Opmenu_Model extends CI_Model {
 			$this->db->where('op.precio', $options['precio']);
 		if(isset($options['categorias_id']))
 			$this->db->where('op.categorias_id', $options['categorias_id']);
+		if(isset($options['thumb']))
+			$this->db->where('op.thumb', $options['thumb']);
 		if(isset($options['created_at']))
 			$this->db->where('op.created_at', $options['created_at']);
 		if(isset($options['updated_at']))
@@ -149,6 +153,7 @@ class Opmenu_Model extends CI_Model {
 		$fields[]='precio';
 		$fields[]='categorias_id';
 		$fields[]='categoria_descripcion';
+		$fields[]='thumb';
 		$fields[]='created_at';
 		$fields[]='updated_at';
 		return $fields;

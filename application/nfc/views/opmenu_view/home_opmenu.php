@@ -29,7 +29,7 @@
 				</div>
             </div>
      </div>
-     <div class="row-fluid" id="result-list"> </div>
+     <div class="row" id="result-list"> </div>
 
  </div><!--/span10-->
 
