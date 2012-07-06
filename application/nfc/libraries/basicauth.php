@@ -172,7 +172,7 @@ class Basicauth {
 	function getMenu($parent=0,$ul_start="<ul class='nav nav-pills nav-stacked'>")
 	{
 		
-		$query_str = "select s._id, s.descripcion, s.parent, sv.link from sismenu as s 
+		$query_str = "select s._id, s.descripcion, s.parent,s.iconpath, sv.link from sismenu as s 
 		inner join sisperfil as sp on s._id = sp.sismenu_id inner join
 		sisvinculos as sv on s._id = sv.sismenu_id where 
 		s.parent =$parent and 
@@ -187,9 +187,9 @@ class Basicauth {
 			foreach($query_a->result() as $field)
 			{
 				if($field->link == "#"){
-					echo " <li> <a href='#' >".$field->descripcion."</a>";		
+					echo " <li><a href='#' >".$field->descripcion."</a>";		
 				}else{
-			   	echo " <li> <a href='".base_url()."".$field->link."'>".$field->descripcion."</a>";
+			   	echo " <li><a href='".base_url()."".$field->link."'>".$field->descripcion."</a>";
 			   }
 				$this->getMenu($field->_id,$ul_start="<ul>"); 	
 			}

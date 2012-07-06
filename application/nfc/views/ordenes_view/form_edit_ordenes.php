@@ -1,53 +1,91 @@
-<script> setDatePicker(new Array('created_at'));</script>
-<div id="title-level2"><?=$subtitle?></div>
-<div id="form">
-<div class="fields-required">Campos obligatorios (*)</div>
-<form action="<?=base_url()?>ordenes_controller/edit_c/<?=$ordenes->_id?>" method="post" name="formEditordenes" id="formEditordenes">
-	<p>
-		<label><span class='required'>*</span><?=$this->config->item('_id')?>:</label>
-		<input type="text" value="<?=$ordenes->_id?>" name="_id" id="_id"  readonly="readonly"></input>
-	</p>
-	<p>
-		<label><span class='required'>*</span><?=$this->config->item('opmenu_id')?>:</label>
-		<input type="text" value="<?=$ordenes->opmenu_id?>" name="opmenu_id" id="opmenu_id"></input>
-	</p>
-	<p>
-		<label><span class='required'>*</span><?=$this->config->item('cantidad')?>:</label>
-		<input type="text" value="<?=$ordenes->cantidad?>" name="cantidad" id="cantidad"></input>
-	</p>
-	<p>
-		<label><span class='required'>*</span><?=$this->config->item('montotal')?>:</label>
-		<input type="text" value="<?=$ordenes->montotal?>" name="montotal" id="montotal"></input>
-	</p>
-	<p>
-		<label><span class='required'>*</span><?=$this->config->item('observacion')?>:</label>
-		<input type="text" value="<?=$ordenes->observacion?>" name="observacion" id="observacion"></input>
-	</p>
-	<p>
-		<label><span class='required'>*</span><?=$this->config->item('estado')?>:</label>
-		<input type="text" value="<?=$ordenes->estado?>" name="estado" id="estado"></input>
-	</p>
-	<p>
-		<label><span class='required'>*</span><?=$this->config->item('mesas_id')?>:</label>
-		<input type="text" value="<?=$ordenes->mesas_id?>" name="mesas_id" id="mesas_id"></input>
-	</p>
-	<p>
-		<label><span class='required'>*</span><?=$this->config->item('created_at')?>:</label>
-		<input type="text" value="<?=$ordenes->created_at?>" name="created_at" id="created_at"></input>
-	</p>
-	<p>
-		<label><span class='required'>*</span><?=$this->config->item('updated_at')?>:</label>
-		<input type="text" value="<?=$ordenes->updated_at?>" name="updated_at" id="updated_at"></input>
-	</p>
-	<div class="botonera">
-		<input type="submit" name="modificar" value="Modificar" class="crudtest-button" id="btn-save" onClick="submitData('formEditordenes',new Array('right-content','right-content'))"></input>
-		<input type="button" name="cancelar" value="Cancelar" class="crudtest-button" id="btn-cancel" onClick="loadPage('<?=base_url()?>ordenes_controller/index','right-content')"></input>
+<?=$this->load->view('default/_header_admin')?>
+
+<div class="span10">
+	<div class="page-header">
+	  <h1><?=$title_header?></h1>
 	</div>
-	<div class="errors" id="errors">
-	<?php
-		echo validation_errors();
-		if(isset($error)) echo $error;
-	?>
-	</div>
-	<div id="busy"><img src="<?=base_url()?>css/images/ajax-loader.gif" /></div></form>
-</div>
+	
+	<?php if(validation_errors() || isset($error)): ?>
+		<div class="alert alert-error">
+			<a class="close" data-dismiss="alert" href="#">×</a>
+			<?=validation_errors()?>
+			
+		</div>		
+	<?php endif; ?>
+	<form action="<?=base_url()?>ordenes_controller/edit_c/<?=$ordenes->_id?>" method="post" name="formEditordenes" id="formEditordenes" class="form-horizontal">
+		<input type="hidden" name="precio" id="precio" value="<?=$ordenes->opmenu_precio?>">
+		<div class="control-group">
+			<label class="control-label"  for="_id"><?=$this->config->item('_id')?>:</label>
+			<div class="controls">
+				<input type="text" value="<?=$ordenes->_id?>" name="_id" id="_id"  readonly="readonly"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label"  for="mesas_descripcion"><?=$this->config->item('mesas_descripcion')?>:</label>
+			<div class="controls">
+				<input type="text" value="<?=$ordenes->mesas_descripcion?>" name="mesas_descripcion" id="mesas_descripcion" readonly="true"/>
+				<input type="hidden" value="<?=$ordenes->mesas_id?>" name="mesas_id" id="mesas_id"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label"  for="opmenu_nombre"><?=$this->config->item('opmenu_nombre')?>:</label>
+			<div class="controls">
+				<input type="text" value="<?=$ordenes->opmenu_nombre?>" name="opmenu_nombre" id="opmenu_nombre" readonly="true"/>
+				<input type="hidden" value="<?=$ordenes->opmenu_id?>" name="opmenu_id" id="opmenu_id"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label"  for="cantidad"><?=$this->config->item('cantidad')?>:</label>
+			<div class="controls">
+				<input type="text" value="<?=$ordenes->cantidad?>" name="cantidad" id="cantidad" onChange="calcTotal(<?=$ordenes->opmenu_precio?>)"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label"  for="montotal"><?=$this->config->item('montotal')?>:</label>
+			<div class="controls">
+				<input type="text" value="<?=$ordenes->montotal?>" name="montotal" id="montotal"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label"  for="estado"><?=$this->config->item('estado')?>:</label>
+			<div class="controls">
+				<select name="estado" id="estado" >
+					<?php foreach($estados as $f): ?>
+						<?php if($f->_id == $ordenes->estado): ?>
+							<option value="<?=$f->_id?>" selected><?=$f->descripcion?></option>
+						<?php else: ?>
+							<option value="<?=$f->_id?>"><?=$f->descripcion?></option>
+						<?php endif; ?>
+					<?php endforeach; ?>
+				</select>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label"  for="observacion"><?=$this->config->item('observacion')?>:</label>
+			<div class="controls">
+				<textarea name="observacion" id="observacion"><?=$ordenes->observacion?></textarea>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label"  for="mesas_id"><?=$this->config->item('created_at')?>:</label>
+			<div class="controls">
+				<input type="text" value="<?=$ordenes->created_at?>" name="created_at" id="created_at" readonly="true" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="updated_at"><?=$this->config->item('updated_at')?>:</label>
+			<div class="controls">
+				<input type="text" value="<?=$ordenes->updated_at?>" name="updated_at" id="updated_at" readonly="true"/>
+			</div>
+		</div>
+
+		<div class="form-actions">
+			<a href="<?=base_url()?>ordenes_controller/index" class="btn" >Cancelar</a>
+			<button type="submit" class="btn btn-primary">Modificar</button>
+		</div>
+
+	</form>
+
+</div><!--/span10-->
+
+<?=$this->load->view('default/_footer_admin')?>

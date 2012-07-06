@@ -14,6 +14,7 @@ class Ordenes_Controller extends CI_Controller {
 		parent::__construct();
 		if($this->session->userdata('logged_in') == true) { 
 			$this->load->model('ordenes_model');
+			$this->load->model('tabgral_model');
 			$this->config->load('ordenes_settings');
 			$data['flags'] = $this->basicauth->getPermissions('ordenes');
 			$this->flagR = $data['flags']['flag-read'];
@@ -29,10 +30,9 @@ class Ordenes_Controller extends CI_Controller {
 		//code here
 		if($this->flagR){
 			$data['flag'] = $this->flags;
-			$data['subtitle'] = $this->config->item('recordListTitle');
-			$data['fieldSearch'] = $this->basicrud->getFieldSearch($this->ordenes_model->getFieldsTable_m());
+			$data['estados'] = $this->tabgral_model->get_m(array('grupos_tabgral_id' => 3)); //estados de ordenes
+			$data['title_header'] = $this->config->item('recordListTitle');
 			$this->load->view('ordenes_view/home_ordenes', $data);
-			$this->search_c();
 		}
 
 	}
@@ -55,8 +55,8 @@ class Ordenes_Controller extends CI_Controller {
 		}
 
 		$data = array();
-		$data['subtitle'] = $this->config->item('recordAddTitle');
-		$this->form_validation->set_rules('_id', '_id', 'trim|integer|xss_clean');
+		$data['title_header'] = $this->config->item('recordAddTitle');
+
 		$this->form_validation->set_rules('opmenu_id', 'opmenu_id', 'trim|integer|xss_clean');
 		$this->form_validation->set_rules('cantidad', 'cantidad', 'trim|integer|xss_clean');
 		$this->form_validation->set_rules('montotal', 'montotal', 'trim|alpha_numeric|xss_clean');
@@ -70,7 +70,7 @@ class Ordenes_Controller extends CI_Controller {
 			$data_ordenes  = array();
 			$data_ordenes['opmenu_id'] = $this->input->post('opmenu_id');
 			$data_ordenes['cantidad'] = $this->input->post('cantidad');
-			$data_ordenes['montotal'] = $this->input->post('montotal');
+			$data_ordenes['montotal'] = $this->basicrud->calcTotal($this->input->post('cantidad'), $this->input->post('precio'));
 			$data_ordenes['observacion'] = $this->input->post('observacion');
 			$data_ordenes['estado'] = $this->input->post('estado');
 			$data_ordenes['mesas_id'] = $this->input->post('mesas_id');
@@ -108,28 +108,27 @@ class Ordenes_Controller extends CI_Controller {
 		}
 
 		$data = array();
-		$data['subtitle'] = $this->config->item('recordEditTitle');
+		$data['title_header'] = $this->config->item('recordEditTitle');
 		$data['ordenes'] = $this->ordenes_model->get_m(array('_id' => $_id),$flag=1);
-		$this->form_validation->set_rules('_id', '_id', 'trim|integer|xss_clean');
-		$this->form_validation->set_rules('opmenu_id', 'opmenu_id', 'trim|integer|xss_clean');
-		$this->form_validation->set_rules('cantidad', 'cantidad', 'trim|integer|xss_clean');
-		$this->form_validation->set_rules('montotal', 'montotal', 'trim|alpha_numeric|xss_clean');
+
+		$this->form_validation->set_rules('_id', '_id', 'trim|required|integer|xss_clean');
+		$this->form_validation->set_rules('opmenu_id', 'opmenu_id', 'trim|required|integer|xss_clean');
+		$this->form_validation->set_rules('cantidad', 'cantidad', 'trim|required|integer|xss_clean');
+		$this->form_validation->set_rules('montotal', 'montotal', 'trim|required|alpha_numeric|xss_clean');
 		$this->form_validation->set_rules('observacion', 'observacion', 'trim|alpha_numeric|xss_clean');
-		$this->form_validation->set_rules('estado', 'estado', 'trim|integer|xss_clean');
-		$this->form_validation->set_rules('mesas_id', 'mesas_id', 'trim|integer|xss_clean');
-		$this->form_validation->set_rules('created_at', 'created_at', 'trim|alpha_numeric|xss_clean');
-		$this->form_validation->set_rules('updated_at', 'updated_at', 'trim|alpha_numeric|xss_clean');
+		$this->form_validation->set_rules('estado', 'estado', 'trim|required|integer|xss_clean');
+		$this->form_validation->set_rules('mesas_id', 'mesas_id', 'trim|required|integer|xss_clean');
+	
 		if($this->form_validation->run()){
 			$data_ordenes  = array();
 			$data_ordenes['_id'] = $this->input->post('_id');
 			$data_ordenes['opmenu_id'] = $this->input->post('opmenu_id');
 			$data_ordenes['cantidad'] = $this->input->post('cantidad');
-			$data_ordenes['montotal'] = $this->input->post('montotal');
+			$data_ordenes['montotal'] = $this->basicrud->calcTotal($this->input->post('cantidad'), $this->input->post('precio'));
 			$data_ordenes['observacion'] = $this->input->post('observacion');
 			$data_ordenes['estado'] = $this->input->post('estado');
 			$data_ordenes['mesas_id'] = $this->input->post('mesas_id');
-			$data_ordenes['created_at'] = $this->basicrud->getFormatDateToBD($this->input->post('created_at'));
-			$data_ordenes['updated_at'] = $this->basicrud->getFormatDateToBD($this->input->post('updated_at'));
+			$data_ordenes['updated_at'] =$this->basicrud->formatDateToBD();
 
 			if($this->ordenes_model->edit_m($data_ordenes)){ 
 				$this->session->set_flashdata('flashConfirm', $this->config->item('ordenes_flash_edit_message')); 
@@ -138,8 +137,10 @@ class Ordenes_Controller extends CI_Controller {
 				$this->session->set_flashdata('flashError', $this->config->item('ordenes_flash_error_message')); 
 				redirect('ordenes_controller','location');
 			}
+		}else{
+			$data['estados'] = $this->tabgral_model->get_m(array('grupos_tabgral_id' => 3));
+			$this->load->view('ordenes_view/form_edit_ordenes',$data);
 		}
-		$this->load->view('ordenes_view/form_edit_ordenes',$data);
 
 	}
 
@@ -186,8 +187,7 @@ class Ordenes_Controller extends CI_Controller {
 		$fieldSearch = array(); 
 		$data_search_ordenes = array(); 
 		$data_search_pagination = array(); 
-		$flag = 0; 
-		$data['flag'] = $this->flags;
+		
 		if($this->flagR)
 		{
 			$fieldSearch = $this->basicrud->getFieldSearch($this->ordenes_model->getFieldsTable_m());
@@ -197,24 +197,20 @@ class Ordenes_Controller extends CI_Controller {
 				{
 					$data_search_ordenes[$field] = $this->input->post($field);
 					$data_search_pagination[$field] = $this->input->post($field);
-					$flag = 1;
 				}
 			}
 
 			$data_search_pagination['count'] = true;
 			$data_search_ordenes['limit'] = $this->config->item('pag_perpage');
 			$data_search_ordenes['offset'] = $offset;
-			$data_search_ordenes['sortBy'] = 'ordenes_id';
-			$data_search_ordenes['sortDirection'] = 'asc';
+			$data_search_ordenes['sortBy'] = 'created_at';
+			$data_search_ordenes['sortDirection'] = 'desc';
 
-			if($flag==1){
-				$data['pagination'] = $this->basicrud->getPagination(array('nameModel'=>'ordenes_model','perpage'=>$this->config->item('pag_perpage')),$data_search_pagination);
-				$data['ordenes'] = $this->ordenes_model->get_m($data_search_ordenes);
-			}else{
-				$data['pagination'] = $this->basicrud->getPagination(array('nameModel'=>'ordenes_model','perpage'=>$this->config->item('pag_perpage'),$data_search_pagination));
-				$data['ordenes'] = $this->ordenes_model->get_m($data_search_ordenes);
-			}
+			$data['pagination'] = $this->basicrud->getPagination(array('nameModel'=>'ordenes_model','perpage'=>$this->config->item('pag_perpage')),$data_search_pagination);
+			$data['ordenes'] = $this->ordenes_model->get_m($data_search_ordenes);
+	
 			$data['fieldShow'] = $this->basicrud->getFieldToShow($this->ordenes_model->getFieldsTable_m());
+			$data['flag'] = $this->flags;
 			$this->load->view('ordenes_view/record_list_ordenes',$data);
 		}
 

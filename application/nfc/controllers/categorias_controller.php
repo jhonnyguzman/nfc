@@ -73,6 +73,7 @@ class Categorias_Controller extends CI_Controller {
 			}
 		}
 		$this->load->view('categorias_view/form_add_categorias',$data);
+		
 
 	}
 

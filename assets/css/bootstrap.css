@@ -154,7 +154,7 @@ textarea {
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px;
   color: #333333;
   background-color: #ffffff;
@@ -171,7 +171,7 @@ a:hover {
 }
 
 .row {
-  margin-left: -20px;
+  margin-left: -5px;
   *zoom: 1;
 }
 
@@ -187,57 +187,57 @@ a:hover {
 
 [class*="span"] {
   float: left;
-  margin-left: 20px;
+  margin-left: 5px;
 }
 
 .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
-  width: 940px;
+  width: 775px;
 }
 
 .span12 {
-  width: 940px;
+  width: 775px;
 }
 
 .span11 {
-  width: 860px;
+  width: 710px;
 }
 
 .span10 {
-  width: 780px;
+  width: 645px;
 }
 
 .span9 {
-  width: 700px;
+  width: 580px;
 }
 
 .span8 {
-  width: 620px;
+  width: 515px;
 }
 
 .span7 {
-  width: 540px;
+  width: 450px;
 }
 
 .span6 {
-  width: 460px;
+  width: 385px;
 }
 
 .span5 {
-  width: 380px;
+  width: 320px;
 }
 
 .span4 {
-  width: 300px;
+  width: 255px;
 }
 
 .span3 {
-  width: 220px;
+  width: 190px;
 }
 
 .span2 {
-  width: 140px;
+  width: 125px;
 }
 
 .span1 {
@@ -245,51 +245,51 @@ a:hover {
 }
 
 .offset12 {
-  margin-left: 980px;
+  margin-left: 785px;
 }
 
 .offset11 {
-  margin-left: 900px;
+  margin-left: 720px;
 }
 
 .offset10 {
-  margin-left: 820px;
+  margin-left: 655px;
 }
 
 .offset9 {
-  margin-left: 740px;
+  margin-left: 590px;
 }
 
 .offset8 {
-  margin-left: 660px;
+  margin-left: 525px;
 }
 
 .offset7 {
-  margin-left: 580px;
+  margin-left: 460px;
 }
 
 .offset6 {
-  margin-left: 500px;
+  margin-left: 395px;
 }
 
 .offset5 {
-  margin-left: 420px;
+  margin-left: 330px;
 }
 
 .offset4 {
-  margin-left: 340px;
+  margin-left: 265px;
 }
 
 .offset3 {
-  margin-left: 260px;
+  margin-left: 200px;
 }
 
 .offset2 {
-  margin-left: 180px;
+  margin-left: 135px;
 }
 
 .offset1 {
-  margin-left: 100px;
+  margin-left: 70px;
 }
 
 .row-fluid {
@@ -313,7 +313,7 @@ a:hover {
   width: 100%;
   min-height: 28px;
   margin-left: 2.127659574%;
-  *margin-left: 2.0744680846382977%;
+  *margin-left: 2.063143444967742%;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
       -ms-box-sizing: border-box;
@@ -326,62 +326,62 @@ a:hover {
 
 .row-fluid .span12 {
   width: 99.99999998999999%;
-  *width: 99.94680850063828%;
+  *width: 99.93548386096774%;
 }
 
 .row-fluid .span11 {
   width: 91.489361693%;
-  *width: 91.4361702036383%;
+  *width: 91.42484556396775%;
 }
 
 .row-fluid .span10 {
   width: 82.97872339599999%;
-  *width: 82.92553190663828%;
+  *width: 82.91420726696774%;
 }
 
 .row-fluid .span9 {
   width: 74.468085099%;
-  *width: 74.4148936096383%;
+  *width: 74.40356896996775%;
 }
 
 .row-fluid .span8 {
   width: 65.95744680199999%;
-  *width: 65.90425531263828%;
+  *width: 65.89293067296774%;
 }
 
 .row-fluid .span7 {
   width: 57.446808505%;
-  *width: 57.3936170156383%;
+  *width: 57.382292375967744%;
 }
 
 .row-fluid .span6 {
   width: 48.93617020799999%;
-  *width: 48.88297871863829%;
+  *width: 48.87165407896774%;
 }
 
 .row-fluid .span5 {
   width: 40.425531911%;
-  *width: 40.3723404216383%;
+  *width: 40.361015781967744%;
 }
 
 .row-fluid .span4 {
   width: 31.914893614%;
-  *width: 31.8617021246383%;
+  *width: 31.85037748496774%;
 }
 
 .row-fluid .span3 {
   width: 23.404255317%;
-  *width: 23.3510638276383%;
+  *width: 23.33973918796774%;
 }
 
 .row-fluid .span2 {
   width: 14.89361702%;
-  *width: 14.8404255306383%;
+  *width: 14.829100890967743%;
 }
 
 .row-fluid .span1 {
   width: 6.382978723%;
-  *width: 6.329787233638298%;
+  *width: 6.318462593967742%;
 }
 
 .container {
@@ -401,8 +401,8 @@ a:hover {
 }
 
 .container-fluid {
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 5px;
+  padding-left: 5px;
   *zoom: 1;
 }
 
@@ -419,12 +419,12 @@ a:hover {
 p {
   margin: 0 0 9px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px;
 }
 
 p small {
-  font-size: 11px;
+  font-size: 12px;
   color: #999999;
 }
 
@@ -673,7 +673,7 @@ code,
 pre {
   padding: 0 3px 2px;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-  font-size: 12px;
+  font-size: 13px;
   color: #333333;
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
@@ -691,7 +691,7 @@ pre {
   display: block;
   padding: 8.5px;
   margin: 0 0 9px;
-  font-size: 12.025px;
+  font-size: 12.950000000000001px;
   line-height: 18px;
   word-break: break-all;
   word-wrap: break-word;
@@ -736,7 +736,7 @@ legend {
   width: 100%;
   padding: 0;
   margin-bottom: 27px;
-  font-size: 19.5px;
+  font-size: 21px;
   line-height: 36px;
   color: #333333;
   border: 0;
@@ -753,7 +753,7 @@ input,
 button,
 select,
 textarea {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: normal;
   line-height: 18px;
 }
@@ -780,7 +780,7 @@ select,
   height: 18px;
   padding: 4px;
   margin-bottom: 9px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px;
   color: #555555;
   background-color: #ffffff;
@@ -995,67 +995,67 @@ textarea,
 input.span12,
 textarea.span12,
 .uneditable-input.span12 {
-  width: 930px;
+  width: 765px;
 }
 
 input.span11,
 textarea.span11,
 .uneditable-input.span11 {
-  width: 850px;
+  width: 700px;
 }
 
 input.span10,
 textarea.span10,
 .uneditable-input.span10 {
-  width: 770px;
+  width: 635px;
 }
 
 input.span9,
 textarea.span9,
 .uneditable-input.span9 {
-  width: 690px;
+  width: 570px;
 }
 
 input.span8,
 textarea.span8,
 .uneditable-input.span8 {
-  width: 610px;
+  width: 505px;
 }
 
 input.span7,
 textarea.span7,
 .uneditable-input.span7 {
-  width: 530px;
+  width: 440px;
 }
 
 input.span6,
 textarea.span6,
 .uneditable-input.span6 {
-  width: 450px;
+  width: 375px;
 }
 
 input.span5,
 textarea.span5,
 .uneditable-input.span5 {
-  width: 370px;
+  width: 310px;
 }
 
 input.span4,
 textarea.span4,
 .uneditable-input.span4 {
-  width: 290px;
+  width: 245px;
 }
 
 input.span3,
 textarea.span3,
 .uneditable-input.span3 {
-  width: 210px;
+  width: 180px;
 }
 
 input.span2,
 textarea.span2,
 .uneditable-input.span2 {
-  width: 130px;
+  width: 115px;
 }
 
 input.span1,
@@ -1613,139 +1613,139 @@ table .span1 {
 
 table .span2 {
   float: none;
-  width: 124px;
+  width: 109px;
   margin-left: 0;
 }
 
 table .span3 {
   float: none;
-  width: 204px;
+  width: 174px;
   margin-left: 0;
 }
 
 table .span4 {
   float: none;
-  width: 284px;
+  width: 239px;
   margin-left: 0;
 }
 
 table .span5 {
   float: none;
-  width: 364px;
+  width: 304px;
   margin-left: 0;
 }
 
 table .span6 {
   float: none;
-  width: 444px;
+  width: 369px;
   margin-left: 0;
 }
 
 table .span7 {
   float: none;
-  width: 524px;
+  width: 434px;
   margin-left: 0;
 }
 
 table .span8 {
   float: none;
-  width: 604px;
+  width: 499px;
   margin-left: 0;
 }
 
 table .span9 {
   float: none;
-  width: 684px;
+  width: 564px;
   margin-left: 0;
 }
 
 table .span10 {
   float: none;
-  width: 764px;
+  width: 629px;
   margin-left: 0;
 }
 
 table .span11 {
   float: none;
-  width: 844px;
+  width: 694px;
   margin-left: 0;
 }
 
 table .span12 {
   float: none;
-  width: 924px;
+  width: 759px;
   margin-left: 0;
 }
 
 table .span13 {
   float: none;
-  width: 1004px;
+  width: 824px;
   margin-left: 0;
 }
 
 table .span14 {
   float: none;
-  width: 1084px;
+  width: 889px;
   margin-left: 0;
 }
 
 table .span15 {
   float: none;
-  width: 1164px;
+  width: 954px;
   margin-left: 0;
 }
 
 table .span16 {
   float: none;
-  width: 1244px;
+  width: 1019px;
   margin-left: 0;
 }
 
 table .span17 {
   float: none;
-  width: 1324px;
+  width: 1084px;
   margin-left: 0;
 }
 
 table .span18 {
   float: none;
-  width: 1404px;
+  width: 1149px;
   margin-left: 0;
 }
 
 table .span19 {
   float: none;
-  width: 1484px;
+  width: 1214px;
   margin-left: 0;
 }
 
 table .span20 {
   float: none;
-  width: 1564px;
+  width: 1279px;
   margin-left: 0;
 }
 
 table .span21 {
   float: none;
-  width: 1644px;
+  width: 1344px;
   margin-left: 0;
 }
 
 table .span22 {
   float: none;
-  width: 1724px;
+  width: 1409px;
   margin-left: 0;
 }
 
 table .span23 {
   float: none;
-  width: 1804px;
+  width: 1474px;
   margin-left: 0;
 }
 
 table .span24 {
   float: none;
-  width: 1884px;
+  width: 1539px;
   margin-left: 0;
 }
 
@@ -2560,7 +2560,7 @@ button.close {
   padding: 4px 10px 4px;
   margin-bottom: 0;
   *margin-left: .3em;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px;
   *line-height: 20px;
   color: #333333;
@@ -2657,7 +2657,7 @@ button.close {
 
 .btn-large {
   padding: 9px 14px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: normal;
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
@@ -2670,7 +2670,7 @@ button.close {
 
 .btn-small {
   padding: 5px 9px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 16px;
 }
 
@@ -2680,7 +2680,7 @@ button.close {
 
 .btn-mini {
   padding: 2px 6px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 14px;
 }
 
@@ -3738,7 +3738,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
-  width: 940px;
+  width: 775px;
 }
 
 .navbar-fixed-top {
@@ -4427,7 +4427,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .thumbnails {
-  margin-left: -20px;
+  margin-left: -5px;
   list-style: none;
   *zoom: 1;
 }
@@ -4449,7 +4449,7 @@ input[type="submit"].btn.btn-mini {
 .thumbnails > li {
   float: left;
   margin-bottom: 18px;
-  margin-left: 20px;
+  margin-left: 5px;
 }
 
 .thumbnail {
@@ -4485,7 +4485,7 @@ a.thumbnail:hover {
 
 .label,
 .badge {
-  font-size: 10.998px;
+  font-size: 11.844px;
   font-weight: bold;
   line-height: 14px;
   color: #ffffff;

@@ -88,23 +88,23 @@ class Ordenes_Model extends CI_Model {
 	{
 		//code here
 		if(isset($options['_id']))
-			$this->db->where('_id', $options['_id']);
+			$this->db->where('o._id', $options['_id']);
 		if(isset($options['opmenu_id']))
-			$this->db->where('opmenu_id', $options['opmenu_id']);
+			$this->db->where('o.opmenu_id', $options['opmenu_id']);
 		if(isset($options['cantidad']))
-			$this->db->where('cantidad', $options['cantidad']);
+			$this->db->where('o.cantidad', $options['cantidad']);
 		if(isset($options['montotal']))
-			$this->db->where('montotal', $options['montotal']);
+			$this->db->where('o.montotal', $options['montotal']);
 		if(isset($options['observacion']))
-			$this->db->like('observacion', $options['observacion']);
+			$this->db->like('o.observacion', $options['observacion']);
 		if(isset($options['estado']))
-			$this->db->where('estado', $options['estado']);
+			$this->db->where('o.estado', $options['estado']);
 		if(isset($options['mesas_id']))
-			$this->db->where('mesas_id', $options['mesas_id']);
+			$this->db->where('o.mesas_id', $options['mesas_id']);
 		if(isset($options['created_at']))
-			$this->db->where('created_at', $options['created_at']);
+			$this->db->where('o.created_at', $options['created_at']);
 		if(isset($options['updated_at']))
-			$this->db->where('updated_at', $options['updated_at']);
+			$this->db->where('o.updated_at', $options['updated_at']);
 
 		//limit / offset
 		if(isset($options['limit']) && isset($options['offset']))
@@ -116,19 +116,25 @@ class Ordenes_Model extends CI_Model {
 		if(isset($options['sortBy']) && isset($options['sortDirection']))
 			$this->db->order_by($options['sortBy'],$options['sortDirection']);
 
-		$query = $this->db->get('ordenes');
+		$this->db->select('o.*, m.descripcion as mesas_descripcion, op.nombre as opmenu_nombre, op.precio as opmenu_precio,
+		 tg.descripcion as estado_descripcion');
+		$this->db->from('ordenes as o');
+		$this->db->join('mesas as m','m._id = o.mesas_id');
+		$this->db->join('opmenu as op','op._id = o.opmenu_id');
+		$this->db->join('tabgral as tg','tg._id = o.estado');
+		$query = $this->db->get();
 
 		if(isset($options['count'])) return $query->num_rows();
 
 		//format field of type date if it exist for human 
 		if($query->num_rows()>0){ 
 			if(isset($options['_id']) && $flag==1){
-				$query->row(0)->created_at = $this->basicrud->formatDateToHuman($query->row(0)->created_at);
-				$query->row(0)->updated_at = $this->basicrud->formatDateToHuman($query->row(0)->updated_at);
+				$query->row(0)->created_at = $this->basicrud->timesince($query->row(0)->created_at);
+				$query->row(0)->updated_at = $this->basicrud->timesince($query->row(0)->updated_at);
 				return $query->row(0);
 			}else{
 				foreach($query->result() as $row){ 
-					$row->created_at = $this->basicrud->formatDateToHuman($row->created_at);
+					$row->created_at = $this->basicrud->timesince($row->created_at);
 					$row->updated_at = $this->basicrud->formatDateToHuman($row->updated_at);
 				}
 				return $query->result();
@@ -150,11 +156,15 @@ class Ordenes_Model extends CI_Model {
 		$fields=array();
 		$fields[]='_id';
 		$fields[]='opmenu_id';
+		$fields[]='opmenu_nombre';
+		$fields[]='opmenu_precio';
 		$fields[]='cantidad';
 		$fields[]='montotal';
 		$fields[]='observacion';
 		$fields[]='estado';
+		$fields[]='estado_descripcion';
 		$fields[]='mesas_id';
+		$fields[]='mesas_descripcion';
 		$fields[]='created_at';
 		$fields[]='updated_at';
 		return $fields;

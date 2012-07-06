@@ -7,7 +7,7 @@
 	
 	<?=$this->load->view("default/_result_messages")?>
 
-	 <div class="row-fluid">
+	 <div class="row">
             <div class="span10">
             	<form action="<?=base_url()?>opmenu_controller/search_c" method="post" name="formSearchopmenu" id="formSearchopmenu" class="well form-search">
 					<input type="search" name="nombre" id="nombre" placeholder="nombre" class="input-medium search-query"/>

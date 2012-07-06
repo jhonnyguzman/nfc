@@ -137,13 +137,13 @@
 
 @media (max-width: 767px) {
   body {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 5px;
+    padding-left: 5px;
   }
   .navbar-fixed-top,
   .navbar-fixed-bottom {
-    margin-right: -20px;
-    margin-left: -20px;
+    margin-right: -5px;
+    margin-left: -5px;
   }
   .container-fluid {
     padding: 0;
@@ -310,7 +310,7 @@
     width: 100%;
     min-height: 28px;
     margin-left: 2.762430939%;
-    *margin-left: 2.709239449638298%;
+    *margin-left: 2.697914809967742%;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
         -ms-box-sizing: border-box;
@@ -321,51 +321,51 @@
   }
   .row-fluid .span12 {
     width: 99.999999993%;
-    *width: 99.9468085036383%;
+    *width: 99.93548386396775%;
   }
   .row-fluid .span11 {
     width: 91.436464082%;
-    *width: 91.38327259263829%;
+    *width: 91.37194795296774%;
   }
   .row-fluid .span10 {
     width: 82.87292817100001%;
-    *width: 82.8197366816383%;
+    *width: 82.80841204196776%;
   }
   .row-fluid .span9 {
     width: 74.30939226%;
-    *width: 74.25620077063829%;
+    *width: 74.24487613096774%;
   }
   .row-fluid .span8 {
     width: 65.74585634900001%;
-    *width: 65.6926648596383%;
+    *width: 65.68134021996775%;
   }
   .row-fluid .span7 {
     width: 57.182320438000005%;
-    *width: 57.129128948638304%;
+    *width: 57.11780430896775%;
   }
   .row-fluid .span6 {
     width: 48.618784527%;
-    *width: 48.5655930376383%;
+    *width: 48.554268397967746%;
   }
   .row-fluid .span5 {
     width: 40.055248616%;
-    *width: 40.0020571266383%;
+    *width: 39.990732486967744%;
   }
   .row-fluid .span4 {
     width: 31.491712705%;
-    *width: 31.4385212156383%;
+    *width: 31.42719657596774%;
   }
   .row-fluid .span3 {
     width: 22.928176794%;
-    *width: 22.874985304638297%;
+    *width: 22.86366066496774%;
   }
   .row-fluid .span2 {
     width: 14.364640883%;
-    *width: 14.311449393638298%;
+    *width: 14.300124753967742%;
   }
   .row-fluid .span1 {
     width: 5.801104972%;
-    *width: 5.747913482638298%;
+    *width: 5.736588842967742%;
   }
   input,
   textarea,
@@ -546,7 +546,7 @@
     width: 100%;
     min-height: 28px;
     margin-left: 2.564102564%;
-    *margin-left: 2.510911074638298%;
+    *margin-left: 2.499586434967742%;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
         -ms-box-sizing: border-box;
@@ -557,51 +557,51 @@
   }
   .row-fluid .span12 {
     width: 100%;
-    *width: 99.94680851063829%;
+    *width: 99.93548387096774%;
   }
   .row-fluid .span11 {
     width: 91.45299145300001%;
-    *width: 91.3997999636383%;
+    *width: 91.38847532396775%;
   }
   .row-fluid .span10 {
     width: 82.905982906%;
-    *width: 82.8527914166383%;
+    *width: 82.84146677696775%;
   }
   .row-fluid .span9 {
     width: 74.358974359%;
-    *width: 74.30578286963829%;
+    *width: 74.29445822996774%;
   }
   .row-fluid .span8 {
     width: 65.81196581200001%;
-    *width: 65.7587743226383%;
+    *width: 65.74744968296775%;
   }
   .row-fluid .span7 {
     width: 57.264957265%;
-    *width: 57.2117657756383%;
+    *width: 57.20044113596774%;
   }
   .row-fluid .span6 {
     width: 48.717948718%;
-    *width: 48.6647572286383%;
+    *width: 48.653432588967746%;
   }
   .row-fluid .span5 {
     width: 40.170940171000005%;
-    *width: 40.117748681638304%;
+    *width: 40.10642404196775%;
   }
   .row-fluid .span4 {
     width: 31.623931624%;
-    *width: 31.5707401346383%;
+    *width: 31.55941549496774%;
   }
   .row-fluid .span3 {
     width: 23.076923077%;
-    *width: 23.0237315876383%;
+    *width: 23.01240694796774%;
   }
   .row-fluid .span2 {
     width: 14.529914530000001%;
-    *width: 14.4767230406383%;
+    *width: 14.465398400967743%;
   }
   .row-fluid .span1 {
     width: 5.982905983%;
-    *width: 5.929714493638298%;
+    *width: 5.918389853967742%;
   }
   input,
   textarea,

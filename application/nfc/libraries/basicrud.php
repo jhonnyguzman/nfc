@@ -496,39 +496,81 @@ class BasiCrud {
 	/* conocer la hora exacta de un determinado timezone */
 	function get_date($timezone = 'America/New_York', $full_date_time = false)
 	{
-    date_default_timezone_set($timezone);
-    $date = ($full_date_time) ? date('D,F j, Y, h:i:s A') : date('Y-m-d');
-    date_default_timezone_set('UTC');
-    return $date;
+	    date_default_timezone_set($timezone);
+	    $date = ($full_date_time) ? date('D,F j, Y, h:i:s A') : date('Y-m-d');
+	    date_default_timezone_set('UTC');
+	    return $date;
 	}
 	
 	
 	function array_remove_keys($array, $keys = array()) 
 	{ 
-  
-    // If array is empty or not an array at all, don't bother 
-    // doing anything else. 
-    if(empty($array) || (! is_array($array))) { 
-        return $array; 
-    } 
-  
-    // If $keys is a comma-separated list, convert to an array. 
-    if(is_string($keys)) { 
-        $keys = explode(',', $keys); 
-    } 
-  
-    // At this point if $keys is not an array, we can't do anything with it. 
-    if(! is_array($keys)) { 
-        return $array; 
-    } 
-  
-    // array_diff_key() expected an associative array. 
-    $assocKeys = array(); 
-    foreach($keys as $key) { 
-        $assocKeys[$key] = true; 
-    } 
-  
-    return array_diff_key($array, $assocKeys); 
+	    // If array is empty or not an array at all, don't bother 
+	    // doing anything else. 
+	    if(empty($array) || (! is_array($array))) { 
+	        return $array; 
+	    } 
+	  
+	    // If $keys is a comma-separated list, convert to an array. 
+	    if(is_string($keys)) { 
+	        $keys = explode(',', $keys); 
+	    } 
+	  
+	    // At this point if $keys is not an array, we can't do anything with it. 
+	    if(! is_array($keys)) { 
+	        return $array; 
+	    } 
+	  
+	    // array_diff_key() expected an associative array. 
+	    $assocKeys = array(); 
+	    foreach($keys as $key) { 
+	        $assocKeys[$key] = true; 
+	    } 
+	  
+	    return array_diff_key($array, $assocKeys); 
 	} 
 	
+
+	function calcTotal($cantidad, $precio)
+	{
+		return $cantidad * $precio;
+	}
+
+
+	function timesince($original) 
+	{
+		$ta = array(
+			array(31536000, "Año", "Años"),
+			array(2592000, "Mes", "Meses"),
+			array(604800, "Semana", "Semanas"),
+			array(86400, "Día", "Días"),
+			array(3600, "Hora", "Horas"),
+			array(60, "Minuto", "Minutos"),
+			array(1, "Segundo", "Segundos")
+		);
+		$since = time() - strtotime($original);
+		$res = "";
+		$lastkey = 0;
+		for( $i=0; $i<count($ta); $i++ )
+		{
+			$cnt = floor($since / $ta[$i][0]);
+			if ($cnt != 0) 
+			{
+				$since = $since - ($ta[$i][0] * $cnt);
+				if($res == "")
+				{
+					$res .= ($cnt == 1) ? "1 {$ta[$i][1]}" : "{$cnt} {$ta[$i][2]}";
+					$lastkey = $i;
+				} 
+				else if ($ta[0] >= 60 && ($i - $lastkey) == 1 )
+				{
+					$res .= ($cnt == 1) ? " y 1 {$ta[$i][1]}" : " y {$cnt} {$ta[$i][2]}";
+					break;
+				} else {
+					break;
+				}
+			}
+		}
+		return $res;
+	}
 }

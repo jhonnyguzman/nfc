@@ -31,3 +31,17 @@ function searchData(form,loader)
       return false;
     });	  
 }
+
+function calcTotal(price){
+    if($("#cantidad").val() != ''){
+        $("#montotal").val($("#cantidad").val() * price);
+    }
+}
+
+
+function updateContent(url,div)
+{
+    $.get(url, function(data){
+        $('#'+div).html(data);
+    });
+}

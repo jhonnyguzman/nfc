@@ -4,7 +4,7 @@
 				<thead>
 					<tr>
 						<th>Descripci&oacute;n</th>
-						<th>Estado</th>
+						<th>Fecha de alta</th>
 						<th></th>
 					</tr>
 				</thead>

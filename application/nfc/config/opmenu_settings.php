@@ -4,9 +4,9 @@
 
 /* Config general titles */
 
-$config['recordListTitle']=' Listado de opciones de menu';
-$config['recordAddTitle']=' Nuevo opci&oacute;n de menu';
-$config['recordEditTitle']=' Editar opci&oacute;n de menu';
+$config['recordListTitle']='Opciones de men&uacute;';
+$config['recordAddTitle']='Nueva opci&oacute;n de menu';
+$config['recordEditTitle']='Editar opci&oacute;n de menu';
 $config['accessTitle']='<div class="accessTitle"> No tienes permiso para realizar esta operaci&oacute;n </div>';
 
 /* Config labels of the form fields */

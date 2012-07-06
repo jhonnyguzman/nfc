@@ -39,14 +39,6 @@
       </Cl>
       <SchTrHis/>
     </Tbl>
-    <Tbl UsSo="1" nm="menues">
-      <TblOpts/>
-      <Pk ClNs="_id" nm="pkmenues"/>
-      <Cl au="1" df="" nm="_id" nu="0">
-        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
-      </Cl>
-      <SchTrHis/>
-    </Tbl>
     <Tbl UsSo="1" nm="mesas">
       <TblOpts/>
       <Pk ClNs="_id" nm="pkmesas"/>
@@ -65,6 +57,11 @@
       <Cl au="0" df="" nm="updated_at" nu="1">
         <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
+      <Fk deAc="1" nm="mesas_tabgral_id" prLkCl="_id" upAc="1">
+        <PrTb mn="0" nm="tabgral" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="mesas" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="estado" prCl="_id"/>
+      </Fk>
       <SchTrHis/>
     </Tbl>
     <Tbl UsSo="1" nm="opmenu">
@@ -131,6 +128,11 @@
       <Cl au="0" df="" nm="updated_at" nu="1">
         <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
+      <Fk deAc="1" nm="ordenes_estados_tabgral_id" prLkCl="_id" upAc="1">
+        <PrTb mn="0" nm="tabgral" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="ordenes" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="estado" prCl="_id"/>
+      </Fk>
       <Fk deAc="1" nm="ordenes_mesas_id" prLkCl="_id" upAc="1">
         <PrTb mn="0" nm="mesas" oe="1" sch="public" zr="0"/>
         <CdTb mn="1" nm="ordenes" oe="0" sch="public" zr="1"/>
@@ -393,12 +395,6 @@
       <Cl au="0" df="" nm="perfiles_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="provincias_id" nu="1">
-        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
-      </Cl>
-      <Cl au="0" df="" nm="localidades_id" nu="1">
-        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
-      </Cl>
       <Cl au="0" df="" nm="activationcode" nu="1">
         <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
       </Cl>
@@ -421,17 +417,11 @@
         <CdTb mn="1" nm="usuarios" oe="0" sch="public" zr="1"/>
         <ClPr cdCl="perfiles_id" prCl="_id"/>
       </Fk>
-      <Idx clu="0" nm="localidades_id" unq="0">
-        <ClNs>localidades_id</ClNs>
-      </Idx>
       <Idx clu="0" nm="perfiles_id" unq="0">
         <ClNs>telefono</ClNs>
       </Idx>
       <Idx clu="0" nm="perfiles_id_usuarios" unq="0">
         <ClNs>perfiles_id</ClNs>
-      </Idx>
-      <Idx clu="0" nm="provincias_id" unq="0">
-        <ClNs>provincias_id</ClNs>
       </Idx>
       <Idx clu="0" nm="tabgral_id" unq="0">
         <ClNs>direccion</ClNs>
@@ -441,9 +431,6 @@
       </Idx>
       <Idx clu="0" nm="usuarios_perfiles_id" unq="0">
         <ClNs>perfiles_id</ClNs>
-      </Idx>
-      <Idx clu="0" nm="usuarios_provincias_id" unq="0">
-        <ClNs>provincias_id</ClNs>
       </Idx>
       <SchTrHis/>
     </Tbl>
@@ -471,19 +458,20 @@
       <svg path=""/>
     </DiaProps>
     <TbGl bkCl="ffccccff" sch="public" tbl="sismenu" x="159" y="40"/>
-    <TbGl bkCl="ffccccff" sch="public" tbl="perfiles" x="666" y="47"/>
-    <TbGl bkCl="ffccccff" sch="public" tbl="usuarios" x="935" y="34"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="perfiles" x="617" y="43"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="usuarios" x="786" y="44"/>
     <TbGl bkCl="ffccccff" sch="public" tbl="sisperfil" x="392" y="30"/>
     <TbGl bkCl="ffccccff" sch="public" tbl="sisvinculos" x="162" y="169"/>
     <TbGl bkCl="ffccccff" sch="public" tbl="sispermisos" x="164" y="261"/>
-    <TbGl bkCl="ffccccff" sch="public" tbl="tabgral" x="675" y="245"/>
-    <TbGl bkCl="ffccccff" sch="public" tbl="grupos_tabgral" x="460" y="267"/>
-    <TbGl bkCl="ffccccff" sch="public" tbl="mesas" x="718" y="529"/>
-    <TbGl bkCl="ffccccff" sch="public" tbl="menues" x="473" y="527"/>
-    <TbGl bkCl="ffccccff" sch="public" tbl="categorias" x="248" y="726"/>
-    <TbGl bkCl="ffccccff" sch="public" tbl="opmenu" x="245" y="531"/>
-    <TbGl bkCl="ffccccff" sch="public" tbl="ordenes" x="719" y="680"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="tabgral" x="567" y="251"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="grupos_tabgral" x="381" y="275"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="mesas" x="371" y="607"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="categorias" x="151" y="602"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="opmenu" x="152" y="439"/>
+    <TbGl bkCl="ffccccff" sch="public" tbl="ordenes" x="338" y="438"/>
+    <FkGl bkCl="ff000000" nm="public.mesas.mesas_tabgral_id"/>
     <FkGl bkCl="ff000000" nm="public.opmenu.opmenu_categoria_id"/>
+    <FkGl bkCl="ff000000" nm="public.ordenes.ordenes_estados_tabgral_id"/>
     <FkGl bkCl="ff000000" nm="public.ordenes.ordenes_mesas_id"/>
     <FkGl bkCl="ff000000" nm="public.ordenes.ordenes_opmenu_id"/>
     <FkGl bkCl="ff000000" nm="public.perfiles.perfiles_tabgral_id"/>
@@ -498,8 +486,8 @@
     <FkGl bkCl="ff000000" nm="public.usuarios.usuarios_perfiles_id"/>
     <Notes/>
     <Zones>
-      <Zone bkCl="ffece9d8" h="1231" nm="módulo autetinficación de usuarios" w="394" x="133" y="9"/>
-      <Zone bkCl="ffece9d8" h="1231" nm="Módulo principal" w="542" x="133" y="447"/>
+      <Zone bkCl="ffece9d8" h="856" nm="Sección de autetificación de usuarios" w="394" x="131" y="7"/>
+      <Zone bkCl="ffece9d8" h="377" nm="Sección Principal" w="297" x="134" y="408"/>
     </Zones>
   </Dgm>
   <RnmMgr NxRnmId="227">
@@ -1106,6 +1094,6 @@
     <TreePath/>
     <TreePath>/Schemas (1)</TreePath>
     <TreePath>/Schemas (1)/public</TreePath>
-    <TreePath>/Schemas (1)/public/Tables (13)</TreePath>
+    <TreePath>/Schemas (1)/public/Tables (12)</TreePath>
   </TreePaths>
 </Db>

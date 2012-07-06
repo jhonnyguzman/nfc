@@ -65,7 +65,7 @@
 		<div class="control-group">
 			<label class="control-label" for="estado"><?=$this->config->item('estado')?>:</label>
 			<div class="controls">
-				<select name="estado" id="estado" data-native-menu="false">
+				<select name="estado" id="estado" >
 					<?php foreach ($estados as $f): ?>
 						<?php if($f->_id == $usuarios->estado): ?>
 							<option value="<?=$f->_id?>" selected ><?=$f->descripcion?></option>
@@ -79,7 +79,7 @@
 		<div class="control-group">
 			<label class="control-label" for="perfiles_id"><?=$this->config->item('perfiles_id')?>:</label>
 			<div class="controls">
-				<select name="perfiles_id" id="perfiles_id" data-native-menu="false">
+				<select name="perfiles_id" id="perfiles_id" >
 					<?php foreach ($perfiles as $f): ?>
 						<?php if($f->_id == $usuarios->perfiles_id): ?>
 							<option value="<?=$f->_id?>" selected ><?=$f->descripcion?></option>

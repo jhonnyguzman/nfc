@@ -42,5 +42,13 @@ $route['default_controller'] = "home";
 $route['404_override'] = '';
 
 
+//rutas personalizadas
+
+$route['categorias'] = "categorias_controller";
+$route['categorias/(:num)'] = "opmenu_public_controller/search/$1";
+
+$route['ordenes/nueva/(:num)/(:num)/(:num)'] = "ordenes_public_controller/nueva/$1/$2/$3";
+$route['ordenes/result'] = "ordenes_public_controller/result";
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

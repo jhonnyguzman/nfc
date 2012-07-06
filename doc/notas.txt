@@ -1,0 +1,35 @@
+resistencia adecuada
+
+
+Notas del proyecto:
+
+* Titulo: ESTRUCTURA DE LA APLICACIÓN DE ESCRITURA DE ETIQUETAS NFC
+	 Verificar donde dice "Capitulo 7".
+
+Nuevos requisitos:
+
+El sistema debe ser capaz de bridar un api que ponga a disposicion el conjunto de todas mesas del restaurante en formato JSON.
+El sistema debe ser capaz de bridar un api que ponga a disposicion el conjunto de todas categorias del restaurante en formato JSON.
+El sistema debe ser capaz de bridar un api que ponga a disposicion el conjunto de todas opciones de menú del restaurante en formato JSON.
+
+La aplicación d escritura de etiquetas NFC debe ser capaz de obtener el conjunto de todas las mesas del restaurante en formato JSON.
+La aplicación d escritura de etiquetas NFC debe ser capaz de obtener el conjunto de todas las categorias del restaurante en formato JSON.
+La aplicación d escritura de etiquetas NFC debe ser capaz de obtener el conjunto de todas las opciones de menu del restaurante en formato JSON.
+
+cap 2 -Actualidad
+cap 3 -  Herramientas de trabajo y de desarrollo
+cap 4 - Elementos para la elaboracion del proyecto
+cap 5 - Marco teorico general
+cap 6- Marco teorico especifico
+cap 7 - Especificacion de requisitos de software
+cap 8 - Desarrollo del prototipo
+
+
+Nuevos cambios:
+
+	- Agregar en la parte de contruccion de la aplicacion de escritura de NFC, los permisos
+	que se debe poner el el archivo manifiest para que la aplicacion tenga acceso al dispositivo NFC
+	- Corregir varios problemas puntuales de redaccion.
+	- Terminar indice
+	- Realizar diagrama de caso de usos
+	- Colocar referencias de algunas tablas que faltan, las del principio del proyecto

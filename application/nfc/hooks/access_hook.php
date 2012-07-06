@@ -12,7 +12,8 @@ class Access_Hook {
 			'opemenu_controller',
 			'perfiles_controller',
 			'categorias_controller',
-			'mesas_controller');
+			'mesas_controller',
+			'ordenes_controller');
 		if($CI->session->userdata('logged_in') == true && $CI->router->method == 'login') redirect('admin');
 		if($CI->session->userdata('logged_in') != true && $CI->router->method != 'login' && in_array($CI->router->class, $privatecontrollers))
 		{

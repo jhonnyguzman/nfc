@@ -2,13 +2,16 @@
 <html> 
 	<head> 
 	<meta charset="utf-8" />
-	<title>Tablero de control movil</title> 
+	<title>Restaurante</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="<?=base_url()?>assets/css/bootstrap.css" rel="stylesheet">
 	<style type="text/css">
       body {
         padding-top: 50px;
         padding-bottom: 40px;
+      }
+      .c-content-height{
+        height: 63px;
       }
     </style>
 	<link href="<?=base_url()?>assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -19,16 +22,12 @@
     <script src="<?=base_url()?>assets/js/jquery.js"></script>
     <script src="<?=base_url()?>assets/js/bootstrap-transition.js"></script>
     <script src="<?=base_url()?>assets/js/bootstrap-alert.js"></script>
-    <script src="<?=base_url()?>assets/js/bootstrap-modal.js"></script>
     <script src="<?=base_url()?>assets/js/bootstrap-dropdown.js"></script>
     <script src="<?=base_url()?>assets/js/bootstrap-scrollspy.js"></script>
     <script src="<?=base_url()?>assets/js/bootstrap-tab.js"></script>
-    <script src="<?=base_url()?>assets/js/bootstrap-tooltip.js"></script>
     <script src="<?=base_url()?>assets/js/bootstrap-popover.js"></script>
     <script src="<?=base_url()?>assets/js/bootstrap-button.js"></script>
     <script src="<?=base_url()?>assets/js/bootstrap-collapse.js"></script>
-    <script src="<?=base_url()?>assets/js/bootstrap-carousel.js"></script>
-    <script src="<?=base_url()?>assets/js/bootstrap-typeahead.js"></script>
     <script src="<?=base_url()?>assets/js/extras.js"></script>
 
 </head> 
@@ -42,7 +41,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">NFC Admin </a>
+          <a class="brand" href="#">Restaurante Admin</a>
           <div class="btn-group pull-right">
             <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
               <i class="icon-user"></i> <?=$this->session->userdata('username')?>
@@ -56,9 +55,8 @@
           </div>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li class="active"><a href="#">Promociones</a></li>
+              <li><a href="#about">Quines somos</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

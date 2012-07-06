@@ -1,4 +1,4 @@
-
+	<div class="span12">
 		<?php if(isset($opmenu) && is_array($opmenu) && count($opmenu)>0):?>
 			<ul class="thumbnails">
 				<?php foreach($opmenu as $f):?>
@@ -6,11 +6,13 @@
 						<div class="thumbnail">
 							<img src="<?=base_url()."thumbs/".$f->thumb?>">
 							<div class="caption">
-								<h5><?=$f->nombre?></h5>
+								<h4><?=word_limiter($f->nombre,3)?></h4>
+								<div class="c-content-height">
+									<?=word_limiter($f->descripcion,10)?>
+								</div>
 								<p>
-									<strong><?=$f->descripcion?></strong>
-									<?=$f->precio?>
-									<?=$f->categoria_descripcion?>
+									<strong>Categoria: &nbsp;</strong><?=$f->categoria_descripcion?>&nbsp;&nbsp;&nbsp;&nbsp;
+									<strong>Precio: $&nbsp;</strong><?=$f->precio?>
 								</p>
 								<p>
 									<?php if($flag['u']):?>
@@ -33,6 +35,7 @@
 		<?php else: ?>
 			<p>No results!</p>
 		<?php endif; ?>
+	</div>
 
 <script>
 	$(document).ready(function(){ 
