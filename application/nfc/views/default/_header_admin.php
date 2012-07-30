@@ -56,7 +56,7 @@
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><a href="#">Promociones</a></li>
-              <li><a href="#about">Quines somos</a></li>
+              <li><a href="#about">Quienes somos</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
